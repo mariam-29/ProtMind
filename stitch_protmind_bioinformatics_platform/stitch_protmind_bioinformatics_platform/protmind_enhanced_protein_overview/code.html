@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Protein Overview: P01308</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;family=Sora:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#85f6e4",
+                    "on-background": "#001f2a",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#153441",
+                    "on-secondary-fixed": "#001e2b",
+                    "inverse-primary": "#67d9c8",
+                    "primary-container": "#008376",
+                    "tertiary-fixed-dim": "#a7cece",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#f4faff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#c2e8ff",
+                    "surface-container-high": "#ceedfe",
+                    "surface": "#f4faff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#e7f6ff",
+                    "surface-dim": "#c0dff0",
+                    "surface-bright": "#f4faff",
+                    "on-secondary-container": "#16607f",
+                    "on-error": "#ffffff",
+                    "tertiary": "#3d6263",
+                    "primary-fixed-dim": "#67d9c8",
+                    "on-primary-container": "#f4fffb",
+                    "tertiary-fixed": "#c2eaea",
+                    "on-primary-fixed-variant": "#005048",
+                    "on-primary-fixed": "#00201c",
+                    "outline": "#6d7a77",
+                    "on-tertiary-fixed": "#002020",
+                    "on-surface": "#001f2a",
+                    "surface-container": "#daf1ff",
+                    "on-surface-variant": "#3d4947",
+                    "tertiary-container": "#567b7b",
+                    "surface-tint": "#006b60",
+                    "outline-variant": "#bcc9c6",
+                    "on-secondary-fixed-variant": "#004d67",
+                    "secondary-fixed-dim": "#90cff1",
+                    "secondary-container": "#9bdafd",
+                    "inverse-on-surface": "#e1f4ff",
+                    "surface-container-highest": "#c8e7f8",
+                    "surface-variant": "#c8e7f8",
+                    "on-tertiary-container": "#f3fffe",
+                    "on-tertiary-fixed-variant": "#274d4d",
+                    "secondary": "#1d6584",
+                    "on-secondary": "#ffffff",
+                    "primary": "#00685d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "container-padding": "24px",
+                    "stack-md": "16px",
+                    "grid-gutter": "16px",
+                    "base": "4px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body": [
+                            "DM Sans"
+                    ],
+                    "mono": [
+                            "JetBrains Mono"
+                    ],
+                    "h3": [
+                            "Sora"
+                    ],
+                    "h2": [
+                            "Sora"
+                    ],
+                    "label": [
+                            "DM Sans"
+                    ],
+                    "h1": [
+                            "Sora"
+                    ]
+            },
+            "fontSize": {
+                    "body": [
+                            "15px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "mono": [
+                            "13px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "h3": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "h2": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label": [
+                            "13px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "h1": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body text-body min-h-screen flex">
+<!-- SideNavBar (from JSON) -->
+<nav class="flex flex-col w-64 h-screen fixed left-0 top-0 overflow-y-auto bg-slate-900 dark:bg-slate-950 border-r border-slate-800 z-50">
+<!-- Header -->
+<div class="px-6 py-8 border-b border-slate-800 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-teal-500/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-teal-500">science</span>
+</div>
+<div>
+<h2 class="text-lg font-bold tracking-tight text-white font-h2">Helix Systems</h2>
+<p class="font-sans text-[13px] leading-tight tracking-normal text-teal-500 dark:text-teal-400">Clinical Analytics</p>
+</div>
+</div>
+<!-- Tabs -->
+<ul class="flex flex-col py-4 gap-1">
+<li>
+<a class="flex items-center gap-3 px-6 py-3 bg-teal-600/10 text-teal-400 border-r-2 border-teal-500 font-medium font-sans text-[13px] leading-tight tracking-normal scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">clinical_notes</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:bg-slate-800 hover:text-slate-200 hover:bg-slate-800 transition-colors duration-150 font-sans text-[13px] leading-tight tracking-normal scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">biotech</span>
+                    Sequencing
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:bg-slate-800 hover:text-slate-200 hover:bg-slate-800 transition-colors duration-150 font-sans text-[13px] leading-tight tracking-normal scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+                    Analysis
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:bg-slate-800 hover:text-slate-200 hover:bg-slate-800 transition-colors duration-150 font-sans text-[13px] leading-tight tracking-normal scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">database</span>
+                    Storage
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:bg-slate-800 hover:text-slate-200 hover:bg-slate-800 transition-colors duration-150 font-sans text-[13px] leading-tight tracking-normal scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar (from JSON) -->
+<header class="flex justify-between items-center h-14 px-8 w-full border-b border-teal-100 dark:border-slate-800 shadow-sm dark:shadow-none bg-[#F0FAFA] dark:bg-slate-900 z-40">
+<!-- Brand / Nav -->
+<div class="flex items-center gap-8 h-full">
+<span class="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-widest font-sans">Research Workspace</span>
+<nav class="hidden md:flex items-center gap-6 h-full">
+<a class="h-full flex items-center text-teal-700 dark:text-teal-400 border-b-2 border-teal-700 dark:border-teal-400 pb-1 font-sans text-sm font-medium opacity-80 active:opacity-100 transition-opacity" href="#">Overview</a>
+<a class="h-full flex items-center text-slate-500 dark:text-slate-400 hover:text-teal-600 hover:text-teal-700 dark:hover:text-teal-300 font-sans text-sm font-medium opacity-80 active:opacity-100 transition-opacity" href="#">History</a>
+<a class="h-full flex items-center text-slate-500 dark:text-slate-400 hover:text-teal-600 hover:text-teal-700 dark:hover:text-teal-300 font-sans text-sm font-medium opacity-80 active:opacity-100 transition-opacity" href="#">Protocols</a>
+</nav>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="text-teal-700 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 opacity-80 active:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">science</span>
+</button>
+<button class="text-teal-700 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 opacity-80 active:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-teal-700 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 opacity-80 active:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-slate-200 ml-2 overflow-hidden border border-teal-100">
+<img alt="User Scientist Profile" class="w-full h-full object-cover" data-alt="minimalist clean professional scientist avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlPaRUWCcdf9NG4CPAKY1-KKwFMEaMzbX5Njq4ye0wTGqP2VADzZjEwolK-ROnvhNrLZFTqCCS5OdkPkrz3k7utjhXbadcLr9ibcUywh9sSxvjaO3NwbQilDun128b9-07JlZl_NaN1UUkCyP7sVpf7crE9-gcMIG5anGToov_Qo38VrrqLcZYG4dSmLfR3FuPV4SC8D4vaSfSWkTBUJPd7pCaT0IXKDsYrVU2t-UuF8pBOdwm1uiKs2ECdH6ZHwVTid6q3T_w0aI"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-container-padding flex flex-col gap-stack-lg max-w-[1600px] w-full mx-auto">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface">Protein Overview: P01308</h1>
+<p class="font-body text-body text-on-surface-variant mt-2">Insulin precursor [Homo sapiens]</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-primary text-primary font-label text-label rounded hover:bg-surface-container-high transition-colors duration-150 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+                        Export FASTA
+                    </button>
+<button class="px-4 py-2 bg-primary text-on-primary font-label text-label rounded hover:bg-on-primary-fixed-variant transition-colors duration-150 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">science</span>
+                        Run Alignment
+                    </button>
+</div>
+</div>
+<!-- Bento Grid - Info Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<!-- Identity Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_2px_12px_rgba(13,92,122,0.08)] flex flex-col gap-4">
+<div class="flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+<h3 class="font-h3 text-h3 text-on-surface">Identity</h3>
+</div>
+<div class="grid grid-cols-2 gap-y-4 gap-x-2">
+<div>
+<span class="block font-label text-label text-on-surface-variant mb-1">Gene Name</span>
+<span class="font-body text-body text-on-surface font-medium">INS</span>
+</div>
+<div>
+<span class="block font-label text-label text-on-surface-variant mb-1">Organism</span>
+<span class="font-body text-body text-on-surface">Homo sapiens</span>
+</div>
+<div>
+<span class="block font-label text-label text-on-surface-variant mb-1">Sequence Length</span>
+<span class="font-mono text-mono text-on-surface">110 AA</span>
+</div>
+<div>
+<span class="block font-label text-label text-on-surface-variant mb-1">Mass (Da)</span>
+<span class="font-mono text-mono text-on-surface">11,981</span>
+</div>
+</div>
+</div>
+<!-- Structure Summary Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_2px_12px_rgba(13,92,122,0.08)] flex flex-col gap-4">
+<div class="flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">architecture</span>
+<h3 class="font-h3 text-h3 text-on-surface">Secondary Structure</h3>
+</div>
+<div class="flex flex-col gap-3 flex-1 justify-center">
+<div>
+<div class="flex justify-between font-label text-label mb-1">
+<span class="text-on-surface-variant">Alpha Helix</span>
+<span class="text-on-surface font-mono">42%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 42%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-label mb-1">
+<span class="text-on-surface-variant">Beta Strand</span>
+<span class="text-on-surface font-mono">15%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 15%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-label mb-1">
+<span class="text-on-surface-variant">Turn / Coil</span>
+<span class="text-on-surface font-mono">43%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim" style="width: 43%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Function Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_2px_12px_rgba(13,92,122,0.08)] flex flex-col gap-4">
+<div class="flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h3 class="font-h3 text-h3 text-on-surface">Function Overview</h3>
+</div>
+<p class="font-body text-body text-on-surface-variant">
+                        Insulin decreases blood glucose concentration. It increases cell permeability to monosaccharides, amino acids and fatty acids. It accelerates glycolysis, the pentose phosphate cycle, and glycogen synthesis in liver.
+                    </p>
+</div>
+</div>
+<!-- Sequence Viewer -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(13,92,122,0.08)] flex flex-col overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant/30 flex justify-between items-center bg-surface-bright">
+<h3 class="font-h3 text-h3 text-on-surface">Amino Acid Sequence</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 font-label text-label text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-secondary-container inline-block"></span> Signal
+                        </div>
+<div class="flex items-center gap-2 font-label text-label text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-tertiary-container inline-block"></span> Chain
+                        </div>
+</div>
+</div>
+<div class="p-6 overflow-x-auto bg-[#fafafa]">
+<!-- Sequence Grid Layout -->
+<div class="font-mono text-mono grid grid-cols-[60px_1fr] gap-4 whitespace-nowrap">
+<!-- Row 1 -->
+<div class="text-on-surface-variant text-right pr-2 border-r border-outline-variant select-none">1</div>
+<div class="text-on-surface tracking-[0.2em]">
+<span class="bg-secondary-container text-on-secondary-container px-0.5 rounded-sm">MALWMRLLPL</span>
+<span class="bg-secondary-container text-on-secondary-container px-0.5 rounded-sm">LALLALWGPD</span>
+<span class="ml-2">PAAAFVN</span><span class="bg-tertiary-container text-on-tertiary-container px-0.5 rounded-sm">QHL</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-0.5 rounded-sm ml-2">CGSHLVEALY</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-0.5 rounded-sm ml-2">LVCGERGFFY</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-0.5 rounded-sm ml-2">TPKT</span><span class="">RREAED</span>
+</div>
+<!-- Row 2 -->
+<div class="text-on-surface-variant text-right pr-2 border-r border-outline-variant select-none mt-2">61</div>
+<div class="text-on-surface tracking-[0.2em] mt-2">
+<span>LQVGQVELGG</span>
+<span class="ml-2">GPGAGSLQPL</span>
+<span class="ml-2">ALEGSLQKRG</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-0.5 rounded-sm ml-2">IVECQCCTSI</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-0.5 rounded-sm ml-2">CSLYQLENYC</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-0.5 rounded-sm ml-2">N</span>
+</div>
+</div>
+</div>
+</div>
+<!-- GO Annotations Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(13,92,122,0.08)] flex flex-col overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant/30 flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">Gene Ontology (GO) Annotations</h3>
+<button class="text-primary hover:text-primary-fixed-dim font-label text-label flex items-center gap-1 transition-colors">
+                        View All <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</button>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-surface-container-high border-b border-outline-variant">
+<th class="p-4 font-label text-label text-on-surface w-[15%]">GO ID</th>
+<th class="p-4 font-label text-label text-on-surface w-[10%]">Aspect</th>
+<th class="p-4 font-label text-label text-on-surface w-[45%]">Term Name</th>
+<th class="p-4 font-label text-label text-on-surface w-[15%]">Evidence</th>
+<th class="p-4 font-label text-label text-on-surface w-[15%]">Reference</th>
+</tr>
+</thead>
+<tbody class="font-body text-body text-on-surface">
+<tr class="odd:bg-surface-container-lowest even:bg-surface-container-low border-b border-outline-variant/20 hover:bg-surface-variant/30 transition-colors">
+<td class="p-4 font-mono text-mono text-primary">GO:0005179</td>
+<td class="p-4"><span class="w-6 h-6 rounded flex items-center justify-center bg-inverse-surface text-on-tertiary font-label text-xs" title="Molecular Function">F</span></td>
+<td class="p-4">hormone activity</td>
+<td class="p-4">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-[4px] font-label text-[11px] uppercase tracking-wider">IDA</span>
+</td>
+<td class="p-4 text-on-surface-variant font-mono text-xs">PMID:1234567</td>
+</tr>
+<tr class="odd:bg-surface-container-lowest even:bg-surface-container-low border-b border-outline-variant/20 hover:bg-surface-variant/30 transition-colors">
+<td class="p-4 font-mono text-mono text-primary">GO:0005576</td>
+<td class="p-4"><span class="w-6 h-6 rounded flex items-center justify-center bg-tertiary text-on-tertiary font-label text-xs" title="Cellular Component">C</span></td>
+<td class="p-4">extracellular region</td>
+<td class="p-4">
+<span class="bg-primary-container text-on-primary-container px-2 py-1 rounded-[4px] font-label text-[11px] uppercase tracking-wider">TAS</span>
+</td>
+<td class="p-4 text-on-surface-variant font-mono text-xs">Reactome</td>
+</tr>
+<tr class="odd:bg-surface-container-lowest even:bg-surface-container-low border-b border-outline-variant/20 hover:bg-surface-variant/30 transition-colors">
+<td class="p-4 font-mono text-mono text-primary">GO:0008284</td>
+<td class="p-4"><span class="w-6 h-6 rounded flex items-center justify-center bg-outline text-on-primary font-label text-xs" title="Biological Process">P</span></td>
+<td class="p-4">positive regulation of cell population proliferation</td>
+<td class="p-4">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-[4px] font-label text-[11px] uppercase tracking-wider">IMP</span>
+</td>
+<td class="p-4 text-on-surface-variant font-mono text-xs">PMID:9876543</td>
+</tr>
+<tr class="odd:bg-surface-container-lowest even:bg-surface-container-low border-b border-outline-variant/20 hover:bg-surface-variant/30 transition-colors">
+<td class="p-4 font-mono text-mono text-primary">GO:0019201</td>
+<td class="p-4"><span class="w-6 h-6 rounded flex items-center justify-center bg-outline text-on-primary font-label text-xs" title="Biological Process">P</span></td>
+<td class="p-4">carbohydrate metabolic process</td>
+<td class="p-4">
+<span class="bg-surface-dim text-on-surface px-2 py-1 rounded-[4px] font-label text-[11px] uppercase tracking-wider border border-outline-variant">IEA</span>
+</td>
+<td class="p-4 text-on-surface-variant font-mono text-xs">Ensembl</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</body></html>

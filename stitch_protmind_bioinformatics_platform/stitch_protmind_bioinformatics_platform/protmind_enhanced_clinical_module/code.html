@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Helix Systems - Clinical Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;family=Sora:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#85f6e4",
+                        "on-background": "#001f2a",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#153441",
+                        "on-secondary-fixed": "#001e2b",
+                        "inverse-primary": "#67d9c8",
+                        "primary-container": "#008376",
+                        "tertiary-fixed-dim": "#a7cece",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#f4faff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#c2e8ff",
+                        "surface-container-high": "#ceedfe",
+                        "surface": "#f4faff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#e7f6ff",
+                        "surface-dim": "#c0dff0",
+                        "surface-bright": "#f4faff",
+                        "on-secondary-container": "#16607f",
+                        "on-error": "#ffffff",
+                        "tertiary": "#3d6263",
+                        "primary-fixed-dim": "#67d9c8",
+                        "on-primary-container": "#f4fffb",
+                        "tertiary-fixed": "#c2eaea",
+                        "on-primary-fixed-variant": "#005048",
+                        "on-primary-fixed": "#00201c",
+                        "outline": "#6d7a77",
+                        "on-tertiary-fixed": "#002020",
+                        "on-surface": "#001f2a",
+                        "surface-container": "#daf1ff",
+                        "on-surface-variant": "#3d4947",
+                        "tertiary-container": "#567b7b",
+                        "surface-tint": "#006b60",
+                        "outline-variant": "#bcc9c6",
+                        "on-secondary-fixed-variant": "#004d67",
+                        "secondary-fixed-dim": "#90cff1",
+                        "secondary-container": "#9bdafd",
+                        "inverse-on-surface": "#e1f4ff",
+                        "surface-container-highest": "#c8e7f8",
+                        "surface-variant": "#c8e7f8",
+                        "on-tertiary-container": "#f3fffe",
+                        "on-tertiary-fixed-variant": "#274d4d",
+                        "secondary": "#1d6584",
+                        "on-secondary": "#ffffff",
+                        "primary": "#00685d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "container-padding": "24px",
+                        "stack-md": "16px",
+                        "grid-gutter": "16px",
+                        "base": "4px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body": ["DM Sans"],
+                        "mono": ["JetBrains Mono"],
+                        "h3": ["Sora"],
+                        "h2": ["Sora"],
+                        "label": ["DM Sans"],
+                        "h1": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h2": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label": ["13px", { "lineHeight": "1.0", "fontWeight": "500" }],
+                        "h1": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .clinical-shadow {
+            box-shadow: 0 2px 12px rgba(13,92,122,0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body font-body min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="bg-slate-900 text-teal-500 font-sans text-[13px] leading-tight tracking-normal fixed h-full w-64 border-r border-slate-800 flex flex-col fixed left-0 top-0 overflow-y-auto z-20 hidden md:flex">
+<div class="p-6 border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-teal-500 flex items-center justify-center text-slate-900">
+<span class="material-symbols-outlined fill text-lg">biotech</span>
+</div>
+<div>
+<h1 class="text-lg font-bold tracking-tight text-white">Helix Systems</h1>
+<p class="text-teal-500 text-[11px] uppercase tracking-wider mt-0.5">Clinical Analytics</p>
+</div>
+</div>
+</div>
+<div class="flex-1 py-4">
+<ul class="space-y-1 px-3">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-colors duration-150 scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">clinical_notes</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-colors duration-150 scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">biotech</span>
+                        Sequencing
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-teal-600/10 text-teal-400 border-r-2 border-teal-500 font-medium scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+                        Analysis
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-colors duration-150 scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">database</span>
+                        Storage
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-colors duration-150 scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined">settings</span>
+                        Settings
+                    </a>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-slate-800">
+<div class="flex items-center gap-3 px-3 py-2">
+<img alt="User Scientist Profile" class="w-8 h-8 rounded-full border border-slate-700" data-alt="professional portrait of a medical researcher in a lab coat, subtle clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8gfQgLxkB1vddWidTDdC7iyNUzfUSuDWoWUq_yNXqZMjEv_yzefMO-yeJGBTp7TM1e61VrtBY5WWTACvugC1EAUITkOuMr6wNPkb8hCuw6_4w2igujefwFtZIUolKJNkbxj7BwjK0r7PyS07PCZhqOSPpU9uNYQZGwZFLpfSNSk2r06e7hqDQHY0L1x9XZWF7mvb2aDvxq2gGOVAfVpNOCo8PcrIP2NGT7Ma9HsmjXs4agrge-cE--U4miQNFOOgdEWEsl5lnrAM"/>
+<div class="flex flex-col">
+<span class="text-slate-200 font-medium text-[13px]">Dr. A. Chen</span>
+<span class="text-slate-500 text-[11px]">Lead Analyst</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full min-h-screen bg-background">
+<!-- TopAppBar -->
+<header class="bg-[#F0FAFA] text-teal-700 font-sans text-sm font-medium w-full border-b border-teal-100 shadow-sm flex justify-between items-center h-14 px-8 z-10 sticky top-0">
+<div class="flex items-center gap-6">
+<span class="text-sm font-black text-slate-900 uppercase tracking-widest">Research Workspace</span>
+<nav class="hidden lg:flex items-center gap-6 ml-4">
+<a class="text-teal-700 border-b-2 border-teal-700 pb-1 opacity-80 active:opacity-100 transition-opacity" href="#">Overview</a>
+<a class="text-slate-500 hover:text-teal-600 opacity-80 active:opacity-100 transition-opacity" href="#">History</a>
+<a class="text-slate-500 hover:text-teal-600 opacity-80 active:opacity-100 transition-opacity" href="#">Protocols</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-9 pr-4 py-1.5 bg-white border border-slate-200 rounded-md text-sm focus:ring-2 focus:ring-teal-500 focus:border-teal-500 w-64 outline-none placeholder-slate-400" placeholder="Search cohorts, genes, variants..." type="text"/>
+</div>
+<div class="flex items-center gap-3 border-l border-teal-200 pl-4">
+<button class="text-teal-700 hover:text-teal-900 transition-colors"><span class="material-symbols-outlined">science</span></button>
+<button class="text-teal-700 hover:text-teal-900 transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-teal-700 hover:text-teal-900 transition-colors"><span class="material-symbols-outlined">help</span></button>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-container-padding overflow-x-hidden">
+<!-- Page Header -->
+<div class="mb-stack-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h2 class="font-h2 text-h2 text-on-background mb-1">Variant Cohort Analysis</h2>
+<p class="font-body text-body text-on-surface-variant">CCA Demo Project • NSCLC Primary Tumors</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative group">
+<button class="flex items-center gap-2 bg-white border border-outline-variant rounded px-4 py-2 text-on-surface text-sm font-medium hover:bg-surface-container-lowest transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">filter_list</span>
+                            Cohort: Stage III (n=452)
+                            <span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary rounded px-4 py-2 text-sm font-medium hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        New Analysis
+                    </button>
+</div>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
+<!-- Survival Curve (Kaplan-Meier) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl clinical-shadow border border-outline-variant/30 flex flex-col h-[400px]">
+<div class="px-6 py-4 border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-background">Overall Survival by Mutation Status</h3>
+<div class="flex gap-2">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-sm">download</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-sm">fullscreen</span></button>
+</div>
+</div>
+<div class="flex-1 p-6 relative">
+<!-- Chart Area Placeholder -->
+<div class="absolute inset-x-6 inset-y-6 border-l-2 border-b-2 border-outline-variant/40">
+<!-- Grid lines -->
+<div class="absolute w-full h-[1px] bg-outline-variant/20 bottom-1/4"></div>
+<div class="absolute w-full h-[1px] bg-outline-variant/20 bottom-2/4"></div>
+<div class="absolute w-full h-[1px] bg-outline-variant/20 bottom-3/4"></div>
+<div class="absolute w-full h-[1px] bg-outline-variant/20 top-0"></div>
+<!-- Legend -->
+<div class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm border border-outline-variant/30 p-3 rounded text-xs space-y-2">
+<div class="flex items-center gap-2">
+<div class="w-3 h-[2px] bg-primary"></div>
+<span class="font-mono text-on-surface">EGFR+ (n=124)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-[2px] bg-secondary"></div>
+<span class="font-mono text-on-surface">EGFR- (n=328)</span>
+</div>
+</div>
+<!-- Curves (Simulated) -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="text-primary" d="M0,0 L10,5 L20,15 L30,15 L40,25 L50,35 L60,35 L70,45 L80,55 L90,65 L100,75" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+<path class="text-secondary" d="M0,0 L10,15 L20,35 L30,45 L40,65 L50,75 L60,85 L70,90 L80,95 L90,95 L100,98" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</svg>
+</div>
+<!-- Axis Labels -->
+<div class="absolute left-0 top-1/2 -rotate-90 -translate-y-1/2 -translate-x-full text-xs font-label text-on-surface-variant tracking-wider uppercase">Probability</div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full pt-2 text-xs font-label text-on-surface-variant tracking-wider uppercase">Time (Months)</div>
+</div>
+</div>
+<!-- Variant Frequency Heatmap -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl clinical-shadow border border-outline-variant/30 flex flex-col h-[400px]">
+<div class="px-6 py-4 border-b border-outline-variant/20">
+<h3 class="font-h3 text-h3 text-on-background">Co-occurrence Frequency</h3>
+</div>
+<div class="flex-1 p-6 flex flex-col">
+<div class="flex-1 grid grid-cols-4 grid-rows-4 gap-1">
+<!-- Heatmap cells simulated -->
+<div class="bg-primary/90 rounded-sm" title="EGFR / TP53: High"></div>
+<div class="bg-primary/20 rounded-sm"></div>
+<div class="bg-primary/5 rounded-sm"></div>
+<div class="bg-primary/40 rounded-sm"></div>
+<div class="bg-primary/20 rounded-sm"></div>
+<div class="bg-primary/80 rounded-sm"></div>
+<div class="bg-primary/10 rounded-sm"></div>
+<div class="bg-primary/30 rounded-sm"></div>
+<div class="bg-primary/5 rounded-sm"></div>
+<div class="bg-primary/10 rounded-sm"></div>
+<div class="bg-primary/60 rounded-sm"></div>
+<div class="bg-primary/15 rounded-sm"></div>
+<div class="bg-primary/40 rounded-sm"></div>
+<div class="bg-primary/30 rounded-sm"></div>
+<div class="bg-primary/15 rounded-sm"></div>
+<div class="bg-primary/50 rounded-sm"></div>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-mono text-on-surface-variant uppercase">
+<span>EGFR</span>
+<span>TP53</span>
+<span>KRAS</span>
+<span>ALK</span>
+</div>
+</div>
+</div>
+<!-- Variant Table -->
+<div class="lg:col-span-12 bg-surface-container-lowest rounded-xl clinical-shadow border border-outline-variant/30 overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant/20 flex justify-between items-center bg-surface">
+<h3 class="font-h3 text-h3 text-on-background">Significant Variants</h3>
+<button class="flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Export CSV
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30 bg-surface-container-low text-xs font-label text-on-surface-variant uppercase tracking-wider">
+<th class="px-6 py-3 font-medium">Gene</th>
+<th class="px-6 py-3 font-medium">Alteration</th>
+<th class="px-6 py-3 font-medium">Frequency</th>
+<th class="px-6 py-3 font-medium">P-Value</th>
+<th class="px-6 py-3 font-medium">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm font-body text-on-surface divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-variant/30 transition-colors">
+<td class="px-6 py-3 font-mono font-mono text-mono">EGFR</td>
+<td class="px-6 py-3 font-mono font-mono text-mono">L858R</td>
+<td class="px-6 py-3 text-on-surface-variant">24.5%</td>
+<td class="px-6 py-3 font-mono font-mono text-mono">1.2e-08</td>
+<td class="px-6 py-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-tertiary-container/20 text-tertiary">Validated</span>
+</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-variant/30 transition-colors">
+<td class="px-6 py-3 font-mono font-mono text-mono">TP53</td>
+<td class="px-6 py-3 font-mono font-mono text-mono">R175H</td>
+<td class="px-6 py-3 text-on-surface-variant">18.2%</td>
+<td class="px-6 py-3 font-mono font-mono text-mono">3.4e-06</td>
+<td class="px-6 py-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-tertiary-container/20 text-tertiary">Validated</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/30 transition-colors">
+<td class="px-6 py-3 font-mono font-mono text-mono">KRAS</td>
+<td class="px-6 py-3 font-mono font-mono text-mono">G12C</td>
+<td class="px-6 py-3 text-on-surface-variant">12.8%</td>
+<td class="px-6 py-3 font-mono font-mono text-mono">5.1e-04</td>
+<td class="px-6 py-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-variant text-on-surface-variant">In-Progress</span>
+</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-variant/30 transition-colors">
+<td class="px-6 py-3 font-mono font-mono text-mono">ALK</td>
+<td class="px-6 py-3 font-mono font-mono text-mono">Fusion</td>
+<td class="px-6 py-3 text-on-surface-variant">5.4%</td>
+<td class="px-6 py-3 font-mono font-mono text-mono">0.021</td>
+<td class="px-6 py-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-error-container/50 text-on-error-container">Draft</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

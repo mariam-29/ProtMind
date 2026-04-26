@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProtMind - P01308 Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=Sora:wght@500;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#001e2b",
+                        "inverse-primary": "#67d9c8",
+                        "surface-container-low": "#e7f6ff",
+                        "surface-container": "#daf1ff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#c0dff0",
+                        "inverse-on-surface": "#e1f4ff",
+                        "tertiary": "#3d6263",
+                        "on-tertiary-fixed-variant": "#274d4d",
+                        "on-primary-fixed": "#00201c",
+                        "background": "#f4faff",
+                        "tertiary-fixed": "#c2eaea",
+                        "error": "#ba1a1a",
+                        "outline": "#6d7a77",
+                        "primary-container": "#008376",
+                        "secondary": "#1d6584",
+                        "surface-variant": "#c8e7f8",
+                        "on-primary-fixed-variant": "#005048",
+                        "secondary-fixed-dim": "#90cff1",
+                        "primary-fixed-dim": "#67d9c8",
+                        "surface-container-high": "#ceedfe",
+                        "on-primary-container": "#f4fffb",
+                        "surface-bright": "#f4faff",
+                        "on-secondary-container": "#16607f",
+                        "secondary-fixed": "#c2e8ff",
+                        "surface-container-highest": "#c8e7f8",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#00685d",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#004d67",
+                        "on-background": "#001f2a",
+                        "on-tertiary-container": "#f3fffe",
+                        "inverse-surface": "#153441",
+                        "on-surface-variant": "#3d4947",
+                        "on-tertiary-fixed": "#002020",
+                        "tertiary-container": "#567b7b",
+                        "primary-fixed": "#85f6e4",
+                        "on-surface": "#001f2a",
+                        "surface-tint": "#006b60",
+                        "outline-variant": "#bcc9c6",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f4faff",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#9bdafd",
+                        "tertiary-fixed-dim": "#a7cece"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "grid-gutter": "16px",
+                        "base": "4px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Sora"],
+                        "mono": ["JetBrains Mono"],
+                        "label": ["DM Sans"],
+                        "body": ["DM Sans"],
+                        "h3": ["Sora"],
+                        "h2": ["Sora"]
+                    },
+                    "fontSize": {
+                        "h1": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "mono": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["13px", { "lineHeight": "1.0", "fontWeight": "500" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h2": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body text-body antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-[240px] border-r border-slate-800 bg-[#0D1F23] dark:bg-slate-950 flex flex-col h-full py-6 z-20">
+<div class="px-6 mb-8">
+<span class="text-xl font-black text-white tracking-widest uppercase">ProtMind</span>
+</div>
+<div class="flex flex-col gap-1 px-4 flex-grow">
+<!-- Active: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 rounded border-l-4 border-[#1A9E8F] bg-[#1A9E8F]/10 text-white font-semibold font-sans text-sm tracking-tight antialiased transition-all duration-150 ease-in-out scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Dashboard
+            </a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 font-sans text-sm tracking-tight antialiased transition-all duration-150 ease-in-out scale-95 active:scale-100 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">search</span>
+                Search
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 font-sans text-sm tracking-tight antialiased transition-all duration-150 ease-in-out scale-95 active:scale-100 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">view_in_ar</span>
+                3D Viewer
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 font-sans text-sm tracking-tight antialiased transition-all duration-150 ease-in-out scale-95 active:scale-100 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">psychology</span>
+                Predictions
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 font-sans text-sm tracking-tight antialiased transition-all duration-150 ease-in-out scale-95 active:scale-100 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">hub</span>
+                Interactions
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 font-sans text-sm tracking-tight antialiased transition-all duration-150 ease-in-out scale-95 active:scale-100 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">clinical_notes</span>
+                Clinical
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-[240px] flex-1 flex flex-col h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-[240px] h-14 border-b border-slate-200 dark:border-slate-800 bg-[#F0FAFA] dark:bg-slate-900 flex justify-between items-center px-8 z-10 font-sans text-sm font-medium">
+<div class="flex items-center gap-2">
+<span class="text-slate-500 hover:text-[#1A9E8F] cursor-pointer opacity-80 hover:opacity-100">Main Dashboard</span>
+<span class="text-slate-400 material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-[#1A9E8F] font-bold">Protein View</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-1.5 rounded-DEFAULT border border-[#1A9E8F] text-[#1A9E8F] hover:bg-[#1A9E8F]/5 transition-all duration-150 ease-in-out opacity-80 hover:opacity-100">Export</button>
+<div class="flex items-center gap-3 text-slate-500">
+<span class="material-symbols-outlined cursor-pointer hover:text-[#1A9E8F] opacity-80 hover:opacity-100">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-[#1A9E8F] opacity-80 hover:opacity-100">settings</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-slate-200" data-alt="Close up headshot of a professional in a clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVShwGM3AsaFgiYY1a-j3z74lTEFZ1YW2-GRNeHmohmpoStlu48jlkCVlGtERuVw4vNwUwyWnaQBt8bEKgmWtUnSOqlQSML6OSIVDbDQ-PEL9rRfE4he40oR5TEvujiTkknfpts0T1iJMJ9AuElKztKKC1YOxOZNhbmoSGrQnla_FzCVo5l6fbHHcqRJCXAYHDLUKTkEpq-_XqDBdpq7Ha_XA69d7qFKnKzCh58EJrOGrVBtWDCvDmoGaje5va7-bfrAzscv--9G8"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="mt-14 p-container-padding flex-1 overflow-y-auto">
+<!-- Context Header -->
+<div class="mb-stack-lg flex justify-between items-end">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label text-label text-outline">Dashboard</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="font-label text-label text-primary">P01308</span>
+</div>
+<div class="flex items-center gap-4">
+<h1 class="font-h1 text-h1 text-on-background">Insulin</h1>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded-DEFAULT font-label text-label">Homo sapiens</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-DEFAULT border border-primary text-primary font-label text-label hover:bg-primary/5 transition-all duration-150">Save to Project</button>
+<button class="px-4 py-2 rounded-DEFAULT bg-primary text-on-primary font-label text-label hover:bg-primary/90 transition-all duration-150">Run Analysis</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="border-b border-outline-variant mb-stack-lg flex gap-8">
+<button class="pb-2 border-b-2 border-primary text-primary font-label text-label">Overview</button>
+<button class="pb-2 border-b-2 border-transparent text-outline hover:text-primary transition-all duration-150 font-label text-label">3D Structure</button>
+<button class="pb-2 border-b-2 border-transparent text-outline hover:text-primary transition-all duration-150 font-label text-label">AI Predictions</button>
+<button class="pb-2 border-b-2 border-transparent text-outline hover:text-primary transition-all duration-150 font-label text-label">Interactions</button>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-12 gap-grid-gutter">
+<!-- Left Column (4 cols) -->
+<div class="col-span-4 flex flex-col gap-grid-gutter">
+<!-- Info Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(13,92,122,0.08)] overflow-hidden">
+<div class="p-4 border-b border-surface-variant">
+<h3 class="font-h3 text-h3 text-on-background">Protein Information</h3>
+</div>
+<div class="p-0">
+<table class="w-full text-left border-collapse">
+<tbody class="font-body text-body">
+<tr class="border-b border-surface-variant bg-surface-container-lowest">
+<th class="py-3 px-4 font-label text-label text-outline w-1/3">Name</th>
+<td class="py-3 px-4 text-on-background">Insulin</td>
+</tr>
+<tr class="border-b border-surface-variant bg-surface">
+<th class="py-3 px-4 font-label text-label text-outline">UniProt ID</th>
+<td class="py-3 px-4 text-primary font-mono text-mono">P01308</td>
+</tr>
+<tr class="border-b border-surface-variant bg-surface-container-lowest">
+<th class="py-3 px-4 font-label text-label text-outline">Organism</th>
+<td class="py-3 px-4 text-on-background italic">Homo sapiens</td>
+</tr>
+<tr class="border-b border-surface-variant bg-surface">
+<th class="py-3 px-4 font-label text-label text-outline">Length</th>
+<td class="py-3 px-4 text-on-background">110 aa</td>
+</tr>
+<tr class="bg-surface-container-lowest">
+<th class="py-3 px-4 font-label text-label text-outline">Mass</th>
+<td class="py-3 px-4 text-on-background">11,981 Da (11.7 kDa)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column (8 cols) -->
+<div class="col-span-8 flex flex-col gap-grid-gutter">
+<!-- Sequence Display -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(13,92,122,0.08)] flex flex-col">
+<div class="p-4 border-b border-surface-variant flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-background">Sequence</h3>
+<button class="text-primary font-label text-label hover:bg-primary/5 px-2 py-1 rounded transition-all duration-150">Copy FASTA</button>
+</div>
+<div class="p-4 overflow-x-auto">
+<div class="font-mono text-mono text-on-background whitespace-pre leading-relaxed tracking-wider">
+<span class="text-outline mr-4 select-none">  1</span>MALWMRLLPL LALLALWGPD PAAAFVNQHL CGSHLVEALY 
+<span class="text-outline mr-4 select-none"> 41</span>LVCGERGFFY TPKTRREAED LQVGQVELGG GPGAGSLQPL 
+<span class="text-outline mr-4 select-none"> 81</span>ALEGSLQKRG IVEQCCTSIC SLYQLENYCN</div>
+</div>
+</div>
+<!-- GO Annotations -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(13,92,122,0.08)] flex flex-col overflow-hidden">
+<div class="p-4 border-b border-surface-variant">
+<h3 class="font-h3 text-h3 text-on-background">Gene Ontology (GO) Annotations</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-surface-variant">
+<th class="py-3 px-4 font-label text-label text-on-surface">Term</th>
+<th class="py-3 px-4 font-label text-label text-on-surface">Namespace</th>
+<th class="py-3 px-4 font-label text-label text-on-surface">Evidence</th>
+<th class="py-3 px-4 font-label text-label text-on-surface">Source</th>
+</tr>
+</thead>
+<tbody class="font-body text-body">
+<tr class="bg-surface-container-lowest border-b border-surface-variant hover:bg-surface transition-colors">
+<td class="py-3 px-4 text-on-background">insulin receptor binding</td>
+<td class="py-3 px-4 text-outline">molecular_function</td>
+<td class="py-3 px-4"><span class="bg-primary/10 text-primary px-2 py-1 rounded-DEFAULT font-label text-label">IDA</span></td>
+<td class="py-3 px-4 text-primary cursor-pointer hover:underline">UniProtKB</td>
+</tr>
+<tr class="bg-surface border-b border-surface-variant hover:bg-surface-dim transition-colors">
+<td class="py-3 px-4 text-on-background">hormone activity</td>
+<td class="py-3 px-4 text-outline">molecular_function</td>
+<td class="py-3 px-4"><span class="bg-primary/10 text-primary px-2 py-1 rounded-DEFAULT font-label text-label">IDA</span></td>
+<td class="py-3 px-4 text-primary cursor-pointer hover:underline">UniProtKB</td>
+</tr>
+<tr class="bg-surface-container-lowest border-b border-surface-variant hover:bg-surface transition-colors">
+<td class="py-3 px-4 text-on-background">extracellular space</td>
+<td class="py-3 px-4 text-outline">cellular_component</td>
+<td class="py-3 px-4"><span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded-DEFAULT font-label text-label">TAS</span></td>
+<td class="py-3 px-4 text-primary cursor-pointer hover:underline">GO_Central</td>
+</tr>
+<tr class="bg-surface hover:bg-surface-dim transition-colors">
+<td class="py-3 px-4 text-on-background">regulation of glucose transport</td>
+<td class="py-3 px-4 text-outline">biological_process</td>
+<td class="py-3 px-4"><span class="bg-primary/10 text-primary px-2 py-1 rounded-DEFAULT font-label text-label">IMP</span></td>
+<td class="py-3 px-4 text-primary cursor-pointer hover:underline">UniProtKB</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="h-stack-lg"></div> <!-- Bottom padding -->
+</div>
+</main>
+</body></html>

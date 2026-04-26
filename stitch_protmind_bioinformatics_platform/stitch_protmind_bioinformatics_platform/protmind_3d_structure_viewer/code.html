@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProtMind - 3D Structure</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;family=Sora:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#001e2b",
+                        "inverse-primary": "#67d9c8",
+                        "surface-container-low": "#e7f6ff",
+                        "surface-container": "#daf1ff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#c0dff0",
+                        "inverse-on-surface": "#e1f4ff",
+                        "tertiary": "#3d6263",
+                        "on-tertiary-fixed-variant": "#274d4d",
+                        "on-primary-fixed": "#00201c",
+                        "background": "#f4faff",
+                        "tertiary-fixed": "#c2eaea",
+                        "error": "#ba1a1a",
+                        "outline": "#6d7a77",
+                        "primary-container": "#008376",
+                        "secondary": "#1d6584",
+                        "surface-variant": "#c8e7f8",
+                        "on-primary-fixed-variant": "#005048",
+                        "secondary-fixed-dim": "#90cff1",
+                        "primary-fixed-dim": "#67d9c8",
+                        "surface-container-high": "#ceedfe",
+                        "on-primary-container": "#f4fffb",
+                        "surface-bright": "#f4faff",
+                        "on-secondary-container": "#16607f",
+                        "secondary-fixed": "#c2e8ff",
+                        "surface-container-highest": "#c8e7f8",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#00685d",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#004d67",
+                        "on-background": "#001f2a",
+                        "on-tertiary-container": "#f3fffe",
+                        "inverse-surface": "#153441",
+                        "on-surface-variant": "#3d4947",
+                        "on-tertiary-fixed": "#002020",
+                        "tertiary-container": "#567b7b",
+                        "primary-fixed": "#85f6e4",
+                        "on-surface": "#001f2a",
+                        "surface-tint": "#006b60",
+                        "outline-variant": "#bcc9c6",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f4faff",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#9bdafd",
+                        "tertiary-fixed-dim": "#a7cece"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "grid-gutter": "16px",
+                        "base": "4px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Sora"],
+                        "mono": ["JetBrains Mono"],
+                        "label": ["DM Sans"],
+                        "body": ["DM Sans"],
+                        "h3": ["Sora"],
+                        "h2": ["Sora"]
+                    },
+                    "fontSize": {
+                        "h1": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "mono": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["13px", { "lineHeight": "1.0", "fontWeight": "500" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["18px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h2": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .tonal-elevation-2 {
+            box-shadow: 0 2px 12px rgba(13,92,122,0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body text-body antialiased min-h-screen">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-screen w-[240px] border-r border-slate-800 bg-[#0D1F23] dark:bg-slate-950 font-sans text-sm tracking-tight antialiased flex flex-col h-full py-6 z-50">
+<div class="px-8 mb-8">
+<h1 class="text-xl font-black text-white tracking-widest uppercase">ProtMind</h1>
+</div>
+<ul class="flex-1 px-4 space-y-2">
+<!-- Dashboard -->
+<li>
+<a class="flex items-center px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 ease-in-out scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<!-- Search -->
+<li>
+<a class="flex items-center px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 ease-in-out scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined mr-3">search</span>
+                    Search
+                </a>
+</li>
+<!-- 3D Viewer (Active based on Page Context) -->
+<li>
+<a class="flex items-center px-4 py-3 rounded border-l-4 border-[#1A9E8F] bg-[#1A9E8F]/10 text-white font-semibold transition-all duration-150 ease-in-out scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined mr-3">view_in_ar</span>
+                    3D Viewer
+                </a>
+</li>
+<!-- Predictions -->
+<li>
+<a class="flex items-center px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 ease-in-out scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined mr-3">psychology</span>
+                    Predictions
+                </a>
+</li>
+<!-- Interactions -->
+<li>
+<a class="flex items-center px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 ease-in-out scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined mr-3">hub</span>
+                    Interactions
+                </a>
+</li>
+<!-- Clinical -->
+<li>
+<a class="flex items-center px-4 py-3 rounded text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 ease-in-out scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined mr-3">clinical_notes</span>
+                    Clinical
+                </a>
+</li>
+</ul>
+<div class="px-8 mt-auto flex items-center">
+<img alt="ProtMind Logo" class="w-8 h-8 rounded-full border border-slate-700" data-alt="Small circular logo icon representing medical informatics, subtle teal and dark tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz5UJzY4LkfWgV36HJxs3RQCRhj6tIMPDdvnN0R9Io4aW4HPm9CvmhnXROgMgEmrZiecQBEmpJ7oFCOJpHaKzJnyUKowTy2Pxk32o3_WlORdD34pV-8Pc1h1sWK-2kP12-UCtRGXxf9j9n8CxGREotGJ00-koXjD9g_QnkyAal1zr72g-WNqSBNSGZrl5WFmBRF1A2xUh_7NhH40Nn_90DDvFavVSfK6L6ZMWXgJ6YR_TY-PPl24wJnevCGbfmPuXkp3OGYa41PXY"/>
+</div>
+</nav>
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 right-0 left-[240px] h-14 border-b border-slate-200 dark:border-slate-800 bg-[#F0FAFA] dark:bg-slate-900 font-sans text-sm font-medium flex justify-between items-center px-8 z-40">
+<div class="flex items-center gap-2">
+<span class="text-slate-500 hover:text-[#1A9E8F] cursor-pointer opacity-80 hover:opacity-100">Main Dashboard</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+<span class="text-[#1A9E8F] font-bold">Protein View</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#1A9E8F] dark:text-[#22C55E] hover:opacity-80 transition-opacity flex items-center gap-2 text-sm font-medium">
+                Export
+            </button>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#1A9E8F] dark:text-[#22C55E] cursor-pointer opacity-80 hover:opacity-100">notifications</span>
+<span class="material-symbols-outlined text-[#1A9E8F] dark:text-[#22C55E] cursor-pointer opacity-80 hover:opacity-100">settings</span>
+<img alt="User profile" class="w-8 h-8 rounded-full" data-alt="Professional headshot of a clinician or researcher, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYUqwdpugtcRCVBpBpnFD_quz82I89eFP42pu6FTQr2z_iOJ_fj5soEeMu7FIWryscyZjwiegdWYLI-CavLqDzhoWX-GbW52lK0BWrlN3CvOKTTUdfzsfIL0btcA2PyJmvkwGgR8W8LepmjsKPyCJNiMNJHzv0dsbJtyNkkfFHYyl7B2K2DSPzAuW8r2rdSVDPCIoGFTbgcFw7dq0tSm7XFPdcbqcITFW8UHlLQVJSVU9ClYyTQIH9A2qox76cLbFX_xw1HrNyiyI"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] mt-14 p-container-padding">
+<!-- Entity Header & Tabs -->
+<div class="mb-stack-lg">
+<div class="flex justify-between items-end mb-stack-md">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface mb-1">Insulin (INS)</h1>
+<p class="font-mono text-mono text-tertiary">UniProt: P01308 • Human</p>
+</div>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-xs font-label rounded uppercase tracking-wider">Validated</span>
+</div>
+</div>
+<!-- In-Page Tabs -->
+<div class="flex border-b border-outline-variant gap-8">
+<a class="pb-2 font-label text-label text-outline hover:text-primary transition-colors" href="#">Overview</a>
+<a class="pb-2 font-label text-label text-primary border-b-2 border-primary" href="#">3D Structure</a>
+<a class="pb-2 font-label text-label text-outline hover:text-primary transition-colors" href="#">AI Predictions</a>
+<a class="pb-2 font-label text-label text-outline hover:text-primary transition-colors" href="#">Interactions</a>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-grid-gutter h-[calc(100vh-220px)]">
+<!-- Main 3D Viewer Panel (Left 9 columns) -->
+<div class="col-span-9 bg-surface-container-lowest rounded-xl tonal-elevation-2 flex flex-col overflow-hidden relative">
+<!-- Viewer Header -->
+<div class="p-4 border-b border-surface-container flex justify-between items-center bg-white/50 backdrop-blur-sm z-10 absolute top-0 left-0 right-0">
+<h2 class="font-h3 text-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">biotech</span>
+                        AlphaFold Monomer v2.0
+                    </h2>
+<div class="flex gap-2">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-primary transition-colors" title="Settings">
+<span class="material-symbols-outlined text-sm">tune</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-primary transition-colors" title="Expand">
+<span class="material-symbols-outlined text-sm">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- 3D Visualization Placeholder -->
+<div class="flex-1 bg-black w-full h-full relative" data-alt="High fidelity 3D molecular protein structure visualization on a dark background, vibrant colored ribbons indicating confidence levels" id="mol-viewer" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPWgkKR_dT5-pzXhwimIe02_tRe4WbJchvOkvap_tFDznGBHQEU2ipBul7scsfUWcSDFyZ3wH5ESxDqzNJ7Uvzc1e0Csp3MofE-g9dFZE692ZvdxOut44e2u_FxUUFmybg64x8xUWrQWeNh3qer7ua6iUA308xZDUvBRODeTLfdKlaS5vQEjVWyqtAzfEr1L6dB3YvRZOH-cPdogWpgDTUqOcJo9YwT5QdtgOuNGLxCiSEA79_ZGwVgI1T7pTQjz0U4yqzzl1j8IY'); background-size: cover; background-position: center;">
+<!-- Loading Overlay (Simulated) -->
+<!-- <div class="absolute inset-0 bg-surface-container-lowest/80 backdrop-blur flex flex-col items-center justify-center z-20">
+                        <span class="material-symbols-outlined text-primary text-4xl animate-spin mb-4">refresh</span>
+                        <p class="font-label text-label text-on-surface mb-2">SWISS-MODEL fallback in progress...</p>
+                        <div class="w-64 h-1 bg-surface-container rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-1/3 rounded-full"></div>
+                        </div>
+                    </div> -->
+</div>
+</div>
+<!-- Controls Sidebar (Right 3 columns) -->
+<div class="col-span-3 flex flex-col gap-grid-gutter">
+<!-- Action Buttons Card -->
+<div class="bg-surface-container-lowest rounded-xl tonal-elevation-2 p-6">
+<h3 class="font-label text-label text-on-surface-variant uppercase tracking-wider mb-4 border-b border-surface-container pb-2">Controls</h3>
+<div class="flex flex-col gap-3">
+<button class="w-full py-2 px-4 border border-primary text-primary rounded-lg font-label text-label hover:bg-primary hover:text-white transition-all duration-150 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">restart_alt</span>
+                            Reset View
+                        </button>
+<button class="w-full py-2 px-4 border border-primary text-primary rounded-lg font-label text-label hover:bg-primary hover:text-white transition-all duration-150 flex items-center justify-center gap-2 bg-surface-container-low">
+<span class="material-symbols-outlined text-sm">palette</span>
+                            Color by pLDDT
+                        </button>
+<button class="w-full py-2 px-4 border border-primary text-primary rounded-lg font-label text-label hover:bg-primary hover:text-white transition-all duration-150 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">link</span>
+                            Color by Chain
+                        </button>
+<button class="w-full py-2 px-4 border border-primary text-primary rounded-lg font-label text-label hover:bg-primary hover:text-white transition-all duration-150 flex items-center justify-center gap-2 mt-4">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Download PDB
+                        </button>
+</div>
+</div>
+<!-- Legend Card -->
+<div class="bg-surface-container-lowest rounded-xl tonal-elevation-2 p-6 flex-1">
+<h3 class="font-label text-label text-on-surface-variant uppercase tracking-wider mb-4 border-b border-surface-container pb-2">pLDDT Confidence</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-4 h-8 bg-[#0053D6] rounded-sm"></div>
+<div>
+<p class="font-label text-label text-on-surface">Very High</p>
+<p class="font-mono text-mono text-tertiary text-xs">pLDDT ≥ 90</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-4 h-8 bg-[#65CBF3] rounded-sm"></div>
+<div>
+<p class="font-label text-label text-on-surface">Confident</p>
+<p class="font-mono text-mono text-tertiary text-xs">70 ≤ pLDDT &lt; 90</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-4 h-8 bg-[#FFE100] rounded-sm"></div>
+<div>
+<p class="font-label text-label text-on-surface">Low</p>
+<p class="font-mono text-mono text-tertiary text-xs">50 ≤ pLDDT &lt; 70</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-4 h-8 bg-[#FF7D45] rounded-sm"></div>
+<div>
+<p class="font-label text-label text-on-surface">Very Low</p>
+<p class="font-mono text-mono text-tertiary text-xs">pLDDT &lt; 50</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

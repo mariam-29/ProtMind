@@ -1,0 +1,606 @@
+
+
+
+ProtMind
+Software Requirements Specification
+Unified Intelligent Medical Bioinformatics Platform
+
+
+
+
+
+Table of Contents
+Chapter 1: Introduction
+    1.1  Purpose
+    1.2  Document Conventions
+    1.3  Intended Audience and Reading Suggestions
+    1.4  General Background
+    1.5  Research Problem
+    1.6  Product Scope
+    1.7  Project Objectives
+    1.8  References
+Chapter 2: Overall Description
+    2.1  Product Perspective
+    2.2  Product Functions
+    2.3  User Classes and Characteristics
+    2.4  Operating Environment
+    2.5  Design and Implementation Constraints
+    2.6  Stakeholder Analysis
+    2.7  Non-Functional Requirements (NFR)
+    2.8  Feasibility Study
+    2.9  System Assumptions and Dependencies
+Chapter 3: External Interfaces & System Analysis
+    3.1  User Interfaces
+    3.2  Hardware Interfaces
+    3.3  Software Interfaces
+    3.4  Communications Interfaces
+    3.5  System Analysis
+    3.6  Stakeholder Analysis (Detailed)
+    3.7  Functional Requirements
+    3.8  Non-Functional Requirements
+    3.9  Feasibility Study
+    3.10 Use Case Mapping
+    3.11 System Constraints
+    3.12 System Assumptions
+Chapter 4: System Design
+    4.1  System Architecture
+    4.2  Technology Stack
+    4.3  Use Case Specifications
+    4.4  Use Case Diagrams
+    4.5  Entity Relationship Diagram (ERD)
+    4.6  Activity Diagrams & Workflows
+    4.7  Data Flow Diagrams
+    4.8  Prototype Overview
+    4.9  Tooling & Technical References
+Chapter 5: UI/UX Design
+    5.1  Design Philosophy
+    5.2  Design System
+    5.3  Component Library
+    5.4  Information Architecture
+    5.5  Wireframe Specifications
+    5.6  User Flow Diagrams
+    5.7  Interaction Design
+    5.8  Accessibility (A11y) Standards
+    5.9  Responsive Design Rules
+    5.10 Design Tokens Reference
+    5.11 Design Handoff Checklist
+
+Chapter 1: Introduction
+
+1.1  Purpose
+This Software Requirements Specification (SRS) document describes the complete functional and non-functional requirements for ProtMind — a unified, intelligent medical bioinformatics platform designed to consolidate protein research infrastructure into a single coherent system.
+The purpose of this document is to provide a comprehensive, unambiguous, and verifiable specification of ProtMind's intended behavior, system architecture, data management strategy, and external interface requirements. It serves as the authoritative reference for all development, testing, validation, and stakeholder communication activities throughout the project lifecycle.
+This document covers all seven development phases: data infrastructure, visualization suite construction, MVP (Model 1 — Protein Function Prediction), explainability and trust layer, Model 2 (Protein-Protein Interaction Prediction), Model 3 (Cross-Species Essentiality and Mutation Analysis), and the final CCA clinical validation and demonstration.
+
+1.2  Document Conventions
+
+1.3  Intended Audience and Reading Suggestions
+This document is written for multiple audiences with different reading priorities:
+
+
+1.4  General Background
+Modern protein research is operationally fragmented. A researcher studying a disease-linked protein must navigate at minimum four to six separate platforms to complete a single research task: UniProt for sequence and annotation data, AlphaFold DB or SWISS-MODEL for structural prediction, UCSF Chimera or PyMOL for 3D visualization, STRING or BioGRID for interaction data, and DrugBank for pharmacological context. None of these platforms interoperate. Data must be manually transferred between them. Visualization tools require OS-specific desktop installations. The result is that significant researcher time is spent on infrastructure navigation rather than on the biological science itself.
+Protein Language Models (PLMs) — particularly ESM-2, developed by Meta AI — now provide high-quality learned representations of protein sequences that enable machine learning models to predict protein function, interaction, and mutational effects with accuracy approaching experimental benchmarks. These models have not yet been integrated into accessible, unified research platforms accessible to the broader scientific community without computational expertise.
+ProtMind addresses both problems simultaneously: it unifies the fragmented tool landscape into one browser-based platform, and it integrates state-of-the-art PLM-based prediction models with full explainability and evidence tracing — accessible to researchers and clinicians without command-line expertise.
+
+1.5  Research Problem
+
+The research problem decomposes into four sub-problems:
+Infrastructure Fragmentation: Bioinformatics workflows require 4–6 separate platforms with no interoperability, imposing significant overhead on every research task.
+OS and Access Barriers: State-of-the-art 3D visualization tools require desktop installation on specific OS configurations, excluding researchers without those configurations.
+Black-Box AI Predictions: Existing AI-based protein function and interaction predictors return scores without biological explanation, limiting their utility and trustworthiness for clinical applications.
+Rare Disease Research Gaps: Diseases like Cholangiocarcinoma (CCA) are understudied at the protein level despite available genomic data, creating a gap that better tooling could begin to close.
+
+1.6  Product Scope
+ProtMind is a web-based unified bioinformatics research platform. Its scope encompasses:
+
+
+1.7  Project Objectives
+Build a clean, version-controlled, reproducible biological dataset from six major public databases with full data cards and pipeline documentation.
+Deliver six standalone browser-based visualization tools that replace the current multi-platform desktop workflow for protein structure exploration.
+Train and deploy a protein function prediction model (Model 1) using ESM-2 embeddings with residue-level explainability, evaluated on Fmax, AUPR, and MCC.
+Implement a full trust and evidence layer that makes every prediction verifiable, calibrated, and traceable to source databases and literature.
+Train and deploy a protein-protein interaction prediction model (Model 2) with structural binding interface visualization and pharmacological context.
+Train and deploy a cross-species essentiality and mutation effect prediction model (Model 3) with structural comparison and RMSD quantification.
+Produce a complete end-to-end clinical demonstration using CCA TCGA data — from raw expression profiles to ranked, evidence-backed biomarker and drug target candidates.
+Deliver a fully documented, reproducible codebase suitable for academic publication and continued development.
+
+1.8  References
+
+
+Chapter 2: Overall Description
+
+2.1  Product Perspective
+ProtMind is a new, self-contained system that does not replace any single existing product but replaces the workflow that currently requires several products used in combination. It sits in the intersection of three product categories: bioinformatics portals (UniProt, NCBI), structure visualization tools (UCSF Chimera, PyMOL), and AI prediction platforms (AlphaFold, PredictProtein).
+
+
+The system interacts with the following external systems through APIs and data ingestion pipelines:
+AlphaFold DB — queried for existing predicted structures via REST API
+SWISS-MODEL — called for homology modeling for sequences not covered by AlphaFold
+UniProt REST API — protein sequence and annotation retrieval
+PDB REST API — experimental structure retrieval
+STRING API — protein interaction network data
+DrugBank — pharmacological compound and target data
+TCGA / NCI GDC — CCA expression and genomic data (ingested into local database)
+
+2.2  Product Functions
+ProtMind's top-level functions are organized by the five system layers:
+
+
+2.3  User Classes and Characteristics
+
+2.4  Operating Environment
+
+2.5  Design and Implementation Constraints
+Data Licensing: All data sources (UniProt, GO, PDB, AlphaFold, BioGRID, STRING, DrugBank, TCGA) must be used in compliance with their respective open-access licenses. Commercial usage restrictions must be reviewed before any commercialization.
+Compute Dependency: ESM-2 embedding extraction and model training require GPU resources not available in Phase 1–2. Phases 3–6 are gated on securing compute access through the MVP demonstration.
+Browser WebGL Requirement: The 3D visualization layer requires WebGL support. Fallback behavior for WebGL-disabled environments must be defined (static image rendering fallback).
+Experimental Evidence Only: GO annotation labels used for training must be filtered to experimental evidence codes (EXP, IDA, IPI, IMP, IGI, IEP). Computationally predicted annotations must be excluded to prevent label leakage.
+Time-Based Data Splits: Dataset splitting must be time-based (by annotation date), not random, to prevent temporal data leakage and ensure the model's performance reflects genuine predictive value on future annotations.
+Single-Platform Constraint: The system is designed as a web application with no OS-specific components. Desktop application development is out of scope.
+AlphaFold DB Coverage Limit: AlphaFold DB does not cover all protein sequences. The SWISS-MODEL fallback must handle sequences not in AlphaFold DB gracefully, with latency expectations set accordingly.
+
+2.6  Stakeholder Analysis
+
+2.7  Non-Functional Requirements (NFR) — Summary
+
+2.8  Feasibility Study
+Technical Feasibility
+ProtMind's technical approach builds on well-established open-source foundations. ESM-2 is publicly available and has been validated in peer-reviewed literature. Mol* and 3Dmol.js are production-grade WebGL viewers already in use on major bioinformatics portals. UniProt, GO, PDB, AlphaFold, BioGRID, STRING, DrugBank, and TCGA all provide free API access. The primary technical risk is GPU compute availability, which is managed by gating the heavier model phases behind the MVP demonstration.
+
+Operational Feasibility
+The platform is designed for the existing workflows of biomedical researchers and clinicians. The dashboard interface requires no programming knowledge for basic operation. The visualization tools replace existing workflows that researchers already perform manually — the learning curve is the elimination of steps, not the addition of them. Researcher adoption is supported by the standalone visualization tools (Phase 2 value before AI is deployed) and by structured, citation-ready outputs that fit into academic workflows.
+
+Economic Feasibility
+Phase 1 and Phase 2 can be executed using standard cloud compute (CPU-only, low cost). Phase 3 onward requires GPU access, which is the target of the MVP demonstration to grant committees or institutional HPC resources. All data sources are freely available for research use. Development tooling (FastAPI, React, PostgreSQL, PyTorch) is open-source and incurs no licensing cost.
+
+2.9  System Assumptions and Dependencies
+
+
+Chapter 3: External Interfaces & System Analysis
+
+3.1  User Interfaces
+ProtMind's user interface is organized into a unified web dashboard accessible through any modern browser. The interface supports two primary interaction modes: natural language query input (AI-agent mode) and direct tool access (standalone mode).
+
+3.1.1  Main Interface Views
+
+3.2  Hardware Interfaces
+3.2.1  Server-Side Requirements
+
+3.2.2  Client-Side Requirements
+
+3.3  Software Interfaces
+ProtMind integrates with multiple external software systems via REST APIs and local data ingestion pipelines. All external calls are handled through a dedicated API Gateway layer to enforce rate limiting, error handling, and caching.
+
+3.3.1  External API Integrations
+
+3.4  Communications Interfaces
+HTTPS/TLS 1.3: All client-server communication encrypted in transit. No unencrypted HTTP endpoints in production.
+WebSocket: Used for real-time progress updates during long-running operations (structure building, model inference, homology modeling).
+REST API (Internal): Frontend communicates with backend via versioned REST API (v1). All responses follow a consistent JSON envelope structure.
+Server-Sent Events (SSE): Used as fallback for WebSocket in environments where persistent connections are restricted.
+Rate Limiting: All outbound calls to external APIs (AlphaFold, SWISS-MODEL, STRING, etc.) are rate-limited and cached to prevent abuse and comply with provider terms.
+CORS Policy: Configured to allow only trusted origins in production; permissive in development environments.
+
+3.5  System Analysis
+The system operates in two primary interaction flows:
+
+Flow A — AI-Agent Driven Query
+User submits a natural language query (e.g., 'What is the function of P01308 and does it interact with insulin receptor?')
+LLM Router parses intent and identifies required tools/models
+Router orchestrates sequential or parallel calls: data retrieval → embedding extraction → model inference → visualization rendering
+Each step's output is passed to the Output Formatter
+User receives a structured response: plain-language summary, step-by-step explanation, technical details, visualizations, and references
+
+Flow B — Direct Standalone Tool Access
+User opens a visualization tool directly from the dashboard (e.g., '3D Structure Viewer')
+User enters a UniProt ID, PDB ID, or uploads a file
+Tool fetches required data from the appropriate API or local database
+Visualization renders immediately in the browser with full interactive controls
+No AI agent involvement — pure tool-use mode
+
+3.6  Stakeholder Analysis (Detailed)
+3.6.1  Biomedical Researcher
+
+3.6.2  Clinical Scientist / CCA Researcher
+
+3.6.3  Graduate Student / Trainee Researcher
+
+3.6.4  Platform Administrator
+
+3.7  Functional Requirements (FR)
+
+3.7.1  Data Layer & Pipeline
+
+3.7.2  Visualization Suite
+
+3.7.3  Model 1 — Protein Function Prediction
+
+3.7.4  Explainability & Trust Layer
+
+3.7.5  Model 2 — Protein-Protein Interaction Prediction
+
+3.7.6  Model 3 — Cross-Species Essentiality & Mutation Analysis
+
+3.7.7  CCA Clinical Demonstration
+
+3.8  Non-Functional Requirements (NFR)
+3.8.1  Security
+NFR-001: All data in transit MUST be encrypted using TLS 1.3 or higher.
+NFR-002: No personally identifiable information (PII) or protected health information (PHI) SHALL be stored on the platform.
+NFR-003: API keys for external services MUST be stored in environment variables, never hardcoded in source code.
+NFR-004: Authentication tokens MUST expire and support refresh token rotation.
+NFR-005: SQL injection, XSS, and CSRF protections MUST be implemented across all API endpoints.
+
+3.8.2  Performance
+NFR-006: 3D structure rendering for proteins up to 500 residues MUST complete within 3 seconds on recommended client hardware.
+NFR-007: Protein function prediction inference MUST complete within 10 seconds for a single protein.
+NFR-008: Dashboard initial load time MUST be under 2 seconds on a 50 Mbps connection.
+NFR-009: API responses for metadata queries (not structure files) MUST be under 500ms at the 95th percentile.
+
+3.8.3  Scalability
+NFR-010: The system MUST support at least 100 concurrent users during MVP phase without performance degradation.
+NFR-011: The data pipeline MUST process a full UniProt Swiss-Prot refresh within 24 hours.
+NFR-012: The architecture MUST support horizontal scaling of the API layer without application changes.
+
+3.8.4  Usability & UX
+NFR-013: A researcher new to the platform MUST be able to complete a protein function prediction within 5 minutes of first use without documentation.
+NFR-014: All visualization tools MUST be accessible within 2 clicks from the main dashboard.
+NFR-015: Error messages MUST be descriptive and suggest corrective action (not raw stack traces).
+NFR-016: The interface MUST be responsive and usable on screens from 1280×720 to 4K resolution.
+
+3.8.5  Reproducibility & Scientific Integrity
+NFR-017: All model training runs MUST be fully reproducible from a documented configuration file (random seeds, data versions, hyperparameters).
+NFR-018: Every prediction output MUST include the model version and dataset version used to generate it.
+NFR-019: The data pipeline MUST be idempotent — running it twice on the same inputs produces identical outputs.
+
+3.8.6  Portability & Reliability
+NFR-020: The visualization layer MUST render identically on macOS, Windows, and Linux in all supported browsers.
+NFR-021: Dashboard uptime MUST be 99.5% or higher during active research periods.
+NFR-022: All external API calls MUST implement retry logic with exponential backoff and graceful degradation.
+NFR-023: The system MUST provide fallback behavior (static rendering) when WebGL is unavailable.
+
+3.9  Feasibility Study
+3.9.1  Technical Feasibility
+
+3.9.2  Operational Feasibility
+The platform directly addresses workflows that researchers already perform manually. The value proposition is reduction of steps, not addition of new processes. Early phases (1–2) deliver standalone visualization value before any AI model is deployed, reducing the risk that the platform needs to demonstrate prediction quality before earning user trust. The structured output format (summary → steps → details → references) mirrors how research findings are already communicated in the field, lowering the cognitive barrier to adoption.
+
+3.9.3  Economic Feasibility
+
+3.10  Use Case Mapping
+
+3.11  System Constraints (Detailed Analysis)
+3.11.1  Schedule and Time Constraints
+The project is structured in seven sequential phases with dependencies between them. Phases 1–2 have no GPU compute dependency and can proceed immediately. Phase 3 is the critical milestone that gates GPU resource allocation. The sequencing of visualization tools before models (Phase 2 before Phase 3) is intentional — it delivers demonstrable value early and tests infrastructure before model integration begins.
+Phase 1–2 are CPU-only and can begin immediately with standard cloud resources.
+Phase 3 is gated on GPU availability — delays in securing compute directly delay Phases 3–6.
+Phase 7 depends on all three models being trained and evaluated, making it the terminal phase.
+
+3.11.2  Financial and Resource Constraints
+All data sources are free for research use; however, commercial use of DrugBank data requires licensing.
+GPU compute (Phase 3+) requires either institutional HPC access, cloud GPU instances, or research grant allocation.
+The system is designed to minimize infrastructure cost during Phases 1–2 — standard web hosting is sufficient.
+
+3.11.3  Legal and Compliance Constraints
+All six data sources must be used in compliance with their respective licenses. No patient-level data from TCGA may be stored or exposed beyond what is permitted by the TCGA data use agreement.
+ESM-2 model weights are released under the MIT license — commercial use is permitted with attribution.
+Mol* and 3Dmol.js are released under open-source licenses compatible with research use.
+
+3.11.4  Technical and Environmental Constraints
+WebGL is a hard dependency for 3D visualization. Environments that block WebGL (some corporate browsers, privacy extensions) will experience degraded functionality.
+SWISS-MODEL API rate limits constrain how many homology modeling requests can be made per session; caching and queuing are required.
+AlphaFold DB covers approximately 200 million protein sequences but does not cover all possible sequences — especially novel variants.
+
+3.11.5  Data Scope and Security Constraints
+The platform handles protein research data only. No patient data, no clinical records, and no identifiable personal information is in scope.
+TCGA expression data used is aggregate/summary-level, not individual patient records.
+All database credentials and API keys must be managed through a secrets manager in production.
+
+3.12  System Assumptions (Operational Premises)
+3.12.1  Infrastructure and Connectivity Assumptions
+Researchers have reliable internet connectivity during active platform sessions (required for real-time AlphaFold DB and SWISS-MODEL queries).
+The hosting environment provides persistent object storage for PDB and structure files.
+SSL/TLS certificates are available and automatically renewed in the production environment.
+
+3.12.2  Data Quality Assumptions
+UniProt Swiss-Prot reviewed entries are assumed to be of higher quality than TrEMBL unreviewed entries for training purposes.
+GO experimental evidence codes accurately distinguish experimentally validated from computationally predicted annotations.
+AlphaFold DB structure predictions are of sufficient quality for visualization and as training features, with pLDDT and PAE scores as quality proxies.
+
+3.12.3  Scientific and Domain Assumptions
+ESM-2 embeddings capture sufficient protein sequence information to enable accurate function, interaction, and essentiality predictions.
+TCGA CCA expression data is representative of CCA biology at the protein level and appropriate for biomarker candidate identification.
+Time-based data splitting (using annotation dates) is a scientifically valid approach to preventing temporal leakage in protein function prediction benchmarks.
+
+3.12.4  User Behavior Assumptions
+Users are assumed to have a basic understanding of protein biology concepts (sequences, structures, GO terms). The system provides context but is not designed as a primary biology education tool.
+Users are assumed to operate in good faith — the system is a research tool, not a public consumer application.
+Platform administrators are assumed to have basic Linux and Docker proficiency for system operations.
+
+
+Chapter 4: System Design
+
+4.1  System Architecture (High-Level Design)
+4.1.1  Architectural Style
+ProtMind follows a layered service-oriented architecture with a clear separation between the frontend presentation layer, backend API layer, ML inference services, and data layer. The architecture prioritizes modularity — each visualization tool and each prediction model is a deployable service unit — enabling independent scaling and phased delivery.
+
+4.1.2  High-Level Architecture Overview
+
+4.1.3  Major System Components
+
+4.1.4  API Communication Model
+All frontend-to-backend communication uses versioned REST endpoints under /api/v1/.
+Long-running operations (homology modeling, model inference) return a job ID immediately and push progress via WebSocket.
+The frontend polls /api/v1/jobs/{id}/status for environments that cannot maintain WebSocket connections.
+External API calls (AlphaFold, SWISS-MODEL, STRING) are made by the backend only — never directly from the frontend — to protect API keys and enable caching.
+
+4.1.5  Security Architecture
+JWT-based authentication with refresh token rotation. Access tokens expire in 15 minutes; refresh tokens in 7 days.
+Role-based access control (RBAC): Researcher, Clinical Scientist, Platform Admin roles with scoped permissions.
+All external API keys stored in environment variables via a secrets manager (AWS Secrets Manager or equivalent).
+Database credentials rotated automatically via infrastructure-as-code tooling.
+
+4.1.6  Logical Deployment View
+
+4.2  Technology Stack
+4.2.1  Backend Technologies
+
+4.2.2  Frontend Technologies
+
+4.2.3  Database Management System
+
+4.2.4  Configuration and Environment Management
+
+4.2.5  Architectural Trade-offs & Strategic Decisions
+
+4.3  Use Case Specifications
+
+4.3.1  Researcher — Protein Function Query
+
+4.3.2  Researcher — 3D Structure Exploration (Standalone)
+
+4.3.3  Researcher — Protein-Protein Interaction Prediction
+
+4.3.4  Clinical Scientist — CCA Biomarker Candidate Report
+
+4.3.5  Platform Administrator — Data Pipeline Management
+
+4.4  Use Case Diagrams
+The following sections describe the major actors and their interactions with ProtMind system modules. Full diagrammatic representations are to be produced using draw.io or Lucidchart during Phase 2 implementation.
+
+4.4.1  Researcher Module
+
+4.4.2  Clinical Scientist Module
+
+4.4.3  Platform Administrator Module
+
+4.5  Entity Relationship Diagram (ERD)
+4.5.1  Introduction
+The ProtMind data model is centered on the Proteins entity, which anchors all downstream data: annotations, interactions, structural files, dataset splits, and prediction results. The schema is designed to support both the data pipeline (write-heavy, batch operations) and the dashboard (read-heavy, real-time queries).
+
+4.5.2  ERD Design Approach
+Normalization: The schema is normalized to 3NF to avoid redundancy and ensure consistency across pipeline updates.
+Versioning: Annotation and interaction tables include source and date fields to support time-based splitting and provenance tracking.
+Extensibility: The schema is designed to accommodate new data sources (e.g., additional interaction databases) without structural changes.
+
+4.5.3  List of All Entities
+
+4.5.4  Tables of Entities and Attributes
+
+4.5.4.1  Proteins
+
+4.5.4.2  Annotations
+
+4.5.4.3  Interactions
+
+4.5.4.4  Structures
+
+4.5.4.5  Embeddings
+
+4.5.4.6  Dataset_Splits
+
+4.5.4.7  Predictions
+
+4.5.4.8  Expression_Data
+
+4.5.5  Relationships Between Entities
+
+4.6  Activity Diagrams & Workflows
+The following workflows describe the key operational flows within ProtMind. Each activity diagram is documented in structured form, suitable for conversion to UML activity diagrams during implementation.
+
+4.6.1  Activity 1: Protein Sequence Input & Structure Retrieval
+
+4.6.2  Activity 2: Protein Function Prediction
+
+4.6.3  Activity 3: PPI Prediction
+
+4.6.4  Activity 4: Mutation Effect Analysis
+
+4.6.5  Activity 5: CCA Biomarker Pipeline
+
+4.6.6  Activity 6: Data Pipeline Execution
+
+4.7  Data Flow Diagrams (DFD)
+4.7.1  Introduction
+The ProtMind DFDs describe how data flows between external entities, system processes, and data stores at three levels of abstraction: context (Level 0), main processes (Level 1), and detailed prediction pipeline (Level 2).
+
+4.7.2  DFD Level 0 — Context Diagram
+
+4.7.3  DFD Level 1 — Main Processes
+
+4.7.4  DFD Level 2 — Detailed ML Inference Pipeline
+
+4.8  Prototype Overview
+The following sections describe the key interface views of ProtMind as designed during the prototype phase. Full interactive prototypes are to be developed in Figma during Phase 2.
+
+4.8.1  Landing Dashboard
+
+4.8.2  3D Structure Viewer View
+
+4.8.3  Function Prediction Report View
+
+4.8.4  CCA Biomarker Dashboard View
+
+4.8.5  Structure Comparator View
+
+4.9  Tooling & Technical References
+4.9.1  System Modeling & Diagramming
+
+4.9.2  UI/UX Design & Prototyping
+
+4.9.3  Documentation & Publishing Tools
+
+4.9.4  Core Technical Stack
+
+4.9.5  External Integration APIs
+
+
+Chapter 5: UI/UX Design
+
+This chapter documents the complete UI/UX design specification for ProtMind — covering design philosophy, design system (colors, typography, spacing, components), information architecture, wireframe specifications for all major views, interaction design, user flow diagrams, accessibility guidelines, and responsive design rules. This chapter serves as the authoritative design reference for all frontend development work.
+
+5.1  Design Philosophy
+
+5.1.1  Design Pillars
+
+5.1.2  Design Anti-Patterns (Explicitly Avoided)
+No gamification or engagement mechanics — protein research is not a game.
+No modal overuse — dialogs only for destructive or irreversible actions.
+No dark patterns — no hidden controls, no misleading affordances.
+No decorative animations — transitions serve orientation only, never attention.
+No information hiding behind progressive disclosure when the data is the product.
+
+5.2  Design System
+5.2.1  Color Palette
+The color palette is anchored in deep research-blue as the primary brand color, with a strictly controlled palette of functional colors. Colors carry meaning — they are never decorative.
+
+Primary Palette
+
+Neutral Palette
+
+Semantic / Functional Colors
+
+pLDDT Confidence Color Scale (AlphaFold Convention)
+
+5.2.2  Typography
+
+Inter is chosen as the primary typeface for its exceptional legibility at small sizes, its open-source licensing, and its wide character set including all scientific notation required. JetBrains Mono is used exclusively for technical data strings where character-level precision matters — UniProt IDs must never render ambiguously.
+
+5.2.3  Spacing & Layout Grid
+
+Layout Grid
+
+5.2.4  Iconography & Visual Language
+
+5.3  Component Library
+ProtMind's component library is built in React with TypeScript and styled using TailwindCSS utility classes. Every component is documented with its props, variants, states, and accessibility requirements.
+
+5.3.1  Core Interactive Components
+
+◆ SearchBar  — The central interaction element — accepts UniProt IDs, sequences, or natural language
+
+◆ ConfidenceScore  — Displays a model confidence value with color coding and context label
+
+◆ EvidenceBadge  — GO annotation evidence code pill badge
+
+◆ StructureViewer  — The core 3D rendering component wrapping Mol*
+
+◆ InteractionGraph  — D3.js-based PPI network graph
+
+◆ SequenceAnnotator  — Scrollable annotated amino acid sequence display
+
+5.3.2  Layout Components
+
+5.3.3  States & Variants for All Components
+
+5.4  Information Architecture
+5.4.1  Navigation Structure
+
+5.4.2  Site Map
+
+5.5  Wireframe Specifications
+The following wireframe specifications document every major view in ProtMind. Each specification describes the zone layout, component placement, and interaction behavior. Full high-fidelity wireframes are to be produced in Figma using these specs as the source of truth.
+
+5.5.1  Landing Dashboard
+
+5.5.2  3D Structure Viewer
+
+5.5.3  Protein Function Prediction Report
+
+5.5.4  PPI Prediction Report
+
+5.5.5  Sequence Annotator (Standalone)
+
+5.5.6  Structure Comparator
+
+5.5.7  CCA Biomarker Dashboard
+
+5.5.8  Admin Dashboard
+
+5.6  User Flow Diagrams
+5.6.1  Primary Flow: First-Time Researcher — Protein Function Query
+
+5.6.2  Secondary Flow: Clinical Scientist — CCA Candidate Review
+
+5.6.3  Tool-Access Flow: Researcher Using Structure Comparator
+
+5.7  Interaction Design
+5.7.1  Micro-Interactions
+
+5.7.2  Keyboard Navigation & Shortcuts
+
+5.7.3  Error & Empty States
+
+5.8  Accessibility (A11y) Standards
+
+5.8.1  Contrast & Color
+All body text must meet a minimum 4.5:1 contrast ratio against its background (WCAG 2.1 AA).
+Large text (18px+ bold or 24px+ regular) must meet a minimum 3:1 contrast ratio.
+Color must never be the ONLY means of conveying information — confidence levels must also show numeric values and icons.
+The pLDDT color scale must include pattern fills (hatching) or numeric labels as an alternative for color-blind users. A deuteranopia-safe alternative palette is provided.
+
+5.8.2  Keyboard & Focus
+All interactive elements must be reachable via Tab key navigation.
+Focus ring must be visible on all interactive elements — never suppressed with outline: none without a custom visible alternative.
+The 3D structure viewer (Mol*) exposes keyboard rotation and selection controls per the Mol* accessibility guidelines.
+Skip-to-main-content link must be present and visible on focus at the top of every page.
+
+5.8.3  Screen Reader Support
+All images and icons must have descriptive aria-label or alt attributes.
+Dynamic content updates (WebSocket progress, new prediction results) must use aria-live='polite' regions.
+All data tables must have proper scope attributes on headers and descriptive captions.
+Modal dialogs must trap focus and announce their title via aria-labelledby on open.
+The SequenceAnnotator must expose residue data to screen readers via a structured aria-describedby pattern.
+
+5.8.4  Reduced Motion
+All animations must respect prefers-reduced-motion media query — replace transitions with instant state changes when enabled.
+The 3D structure viewer auto-rotation feature must be disabled by default and only enabled on explicit user action.
+
+5.9  Responsive Design Rules
+5.9.1  Desktop (1200px+) — Primary Target
+Full 12-column grid active. All panels visible simultaneously (sidebar + main + context panel).
+3D viewers render at full resolution with all toolbars visible.
+DataTable shows all columns. Charts render at full size.
+
+5.9.2  Tablet (768–1199px)
+Right context panel collapses into a bottom drawer, accessible via a toggle button.
+Tool tiles grid switches to 2-column layout.
+SplitPanel components default to stacked (top/bottom) instead of side-by-side.
+PAE plot in structure viewer moves below the 3D canvas.
+
+5.9.3  Mobile (<768px)
+Left sidebar collapses to hamburger menu.
+3D structure viewer renders in simplified mode — controls moved to a bottom action sheet.
+DataTables use horizontal scroll — no column hiding (all data must remain accessible).
+CCA Dashboard heatmap replaces full matrix with a simplified top-20 ranked list view.
+Network graph viewer falls back to a searchable adjacency table on mobile.
+
+5.10  Design Tokens Reference
+All design values are stored as CSS custom properties (variables) in a single design token file, enabling consistent theming and future dark mode support.
+
+
+5.11  Design Handoff Checklist
+The following checklist must be completed before any design is handed off to the development team.
+
+
