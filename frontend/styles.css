@@ -1,0 +1,266 @@
+/* ==================== ProtMind Design System — Core CSS ==================== */
+
+/* ---------- Global Resets ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Material Symbols ---------- */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.fill-icon {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ---------- Custom Background Patterns ---------- */
+.molecule-pattern {
+    background-color: #f4faff;
+    background-image: radial-gradient(#67d9c8 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* ---------- Clinical Shadow (Subtle, medical-grade) ---------- */
+.clinical-shadow {
+    box-shadow: 0 2px 12px rgba(13, 92, 122, 0.08);
+}
+.clinical-shadow-lg {
+    box-shadow: 0 4px 24px rgba(0, 31, 42, 0.15);
+}
+
+/* ---------- Page Transitions ---------- */
+.page-enter {
+    animation: pageEnter 0.3s ease-out forwards;
+}
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Fade In Animation ---------- */
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+.fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.fade-in-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Slide Up Animation ---------- */
+.slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Auth Background Pattern ---------- */
+.auth-bg {
+    background-color: #f4faff;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(103, 217, 200, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(29, 101, 132, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(0, 131, 118, 0.06) 0%, transparent 50%);
+}
+
+/* ---------- Card Hover Effects ---------- */
+.card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(13, 92, 122, 0.12);
+}
+
+/* ---------- Pulse Dot (Notification) ---------- */
+.pulse-dot {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ---------- Progress Bar Animation ---------- */
+.progress-animate {
+    transition: width 1s ease-out;
+}
+
+/* ---------- Spinner ---------- */
+.spin-slow {
+    animation: spin 3s linear infinite;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ---------- Sequence Viewer Styling ---------- */
+.sequence-cell {
+    transition: background-color 0.15s ease, transform 0.1s ease;
+    cursor: crosshair;
+}
+.sequence-cell:hover {
+    transform: scale(1.15);
+    z-index: 10;
+    position: relative;
+}
+
+/* ---------- Heatmap Cell Hover ---------- */
+.heatmap-cell {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    cursor: pointer;
+}
+.heatmap-cell:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+/* ---------- SVG Curve Animation ---------- */
+.curve-animate {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawCurve 2s ease-out forwards;
+}
+@keyframes drawCurve {
+    to { stroke-dashoffset: 0; }
+}
+
+/* ---------- Tooltip ---------- */
+.tooltip-trigger {
+    position: relative;
+}
+.tooltip-trigger .tooltip-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    white-space: nowrap;
+}
+.tooltip-trigger:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ---------- Custom Scrollbar ---------- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #bcc9c6;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6d7a77;
+}
+
+/* ---------- Navigation Active State ---------- */
+.nav-link-active {
+    background: rgba(26, 158, 143, 0.1);
+    border-left: 4px solid #1A9E8F;
+    color: white;
+    font-weight: 600;
+}
+.nav-link-inactive {
+    border-left: 4px solid transparent;
+    color: #94a3b8;
+}
+.nav-link-inactive:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+/* ---------- Circular Progress ---------- */
+.circular-progress-track {
+    stroke: #ceedfe;
+    fill: none;
+}
+.circular-progress-bar {
+    stroke: #00685d;
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.5s ease-out;
+}
+
+/* ---------- 3D Viewer Dark Canvas ---------- */
+.viewer-canvas {
+    background: linear-gradient(135deg, #021016 0%, #0a2a35 100%);
+}
+
+/* ---------- Badge Styles ---------- */
+.badge-validated {
+    background: rgba(86, 123, 123, 0.2);
+    color: #3d6263;
+}
+.badge-in-progress {
+    background: #c8e7f8;
+    color: #3d4947;
+}
+.badge-draft {
+    background: rgba(255, 218, 214, 0.5);
+    color: #93000a;
+}
+
+/* ---------- Button Primary Hover ---------- */
+.btn-primary {
+    background: #00685d;
+    color: #ffffff;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.btn-primary:hover {
+    background: #005048;
+}
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* ---------- Input Focus ---------- */
+.input-clinical:focus {
+    outline: none;
+    ring: 2px solid #00685d;
+    border-color: #00685d;
+    box-shadow: 0 0 0 3px rgba(0, 104, 93, 0.15);
+}
+
+/* ---------- Responsive Sidebar ---------- */
+@media (max-width: 768px) {
+    #sidebar {
+        transform: translateX(-100%);
+    }
+    #sidebar.open {
+        transform: translateX(0);
+    }
+    .ml-\[240px\] {
+        margin-left: 0 !important;
+    }
+}
