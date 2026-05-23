@@ -99,6 +99,8 @@
             }
         }
     </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"></script>
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body class="bg-background text-on-background min-h-screen font-body text-body antialiased">
@@ -122,10 +124,10 @@
             <div class="flex-1 flex flex-col gap-1 px-4" id="nav-links">
                 <!-- Nav links injected by JS -->
             </div>
-            <div class="px-4 mt-auto pt-4 border-t border-slate-800">
-                <a href="#" onclick="navigate('login'); return false;" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-red-400 hover:bg-white/5 transition-all duration-150 text-sm">
-                    <span class="material-symbols-outlined">logout</span>
-                    <span>Sign Out</span>
+            <div class="px-4 mt-auto pt-4 border-t border-slate-800" id="sidebar-auth-container">
+                <a id="sidebar-auth-btn" href="#" onclick="handleSidebarAuth(); return false;" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-red-400 hover:bg-white/5 transition-all duration-150 text-sm">
+                    <span class="material-symbols-outlined" id="sidebar-auth-icon">logout</span>
+                    <span id="sidebar-auth-text">Sign Out</span>
                 </a>
             </div>
         </nav>
@@ -137,23 +139,113 @@
                 <div class="flex items-center gap-6">
                     <span class="text-sm font-black text-slate-900 uppercase tracking-widest font-sans">Research Workspace</span>
                     <nav class="hidden md:flex items-center gap-4">
-                        <a class="font-sans text-sm font-medium text-[#1A9E8F] font-bold cursor-pointer" href="#">Overview</a>
-                        <a class="font-sans text-sm font-medium text-slate-500 hover:text-[#1A9E8F] cursor-pointer" href="#">History</a>
-                        <a class="font-sans text-sm font-medium text-slate-500 hover:text-[#1A9E8F] cursor-pointer" href="#">Protocols</a>
+                        <a class="font-sans text-sm font-medium text-slate-500 hover:text-[#1A9E8F] cursor-pointer" onclick="navigate('protein'); return false;">Overview</a>
+                        <a class="font-sans text-sm font-medium text-slate-500 hover:text-[#1A9E8F] cursor-pointer" onclick="showModal('history-modal'); return false;">History</a>
+                        <a class="font-sans text-sm font-medium text-slate-500 hover:text-[#1A9E8F] cursor-pointer" onclick="showModal('protocols-modal'); return false;">Protocols</a>
                     </nav>
                 </div>
                 <div class="flex items-center gap-4">
                     <button class="font-sans text-sm font-medium text-primary hover:bg-surface-container rounded-md px-3 py-1.5 transition-colors border border-primary">Export</button>
                     <div class="flex items-center gap-2 text-[#1A9E8F]">
                         <button class="p-1 rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">notifications</span></button>
-                        <button class="p-1 rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">settings</span></button>
+                        <button onclick="showModal('settings-modal')" class="p-1 rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">settings</span></button>
                     </div>
-                    <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm ml-2">U</div>
+                    <div onclick="toggleProfileDropdown(event)" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm ml-2 cursor-pointer relative" id="profile-btn">
+                        <span id="profile-initial">G</span>
+                        <!-- Profile Dropdown -->
+                        <div id="profile-dropdown" class="absolute right-0 top-10 w-56 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-xl py-2 z-50 hidden text-left font-sans font-normal text-slate-800 dark:text-slate-200">
+                            <!-- Populated dynamically by app.js -->
+                        </div>
+                    </div>
                 </div>
             </header>
 
             <!-- Page Content -->
             <main id="page-content" class="flex-1 p-container-padding overflow-y-auto"></main>
+        </div>
+    </div>
+
+    <!-- ==================== MODALS ==================== -->
+    <!-- Backdrop -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden transition-opacity duration-200" onclick="hideAllModals()"></div>
+
+    <!-- History Modal -->
+    <div id="history-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-6 z-[60] hidden transition-transform duration-200">
+        <div class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                <span class="material-symbols-outlined text-teal-500">history</span> Search History
+            </h3>
+            <button onclick="hideModal('history-modal')" class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 dark:text-slate-500 transition-colors"><span class="material-symbols-outlined text-sm">close</span></button>
+        </div>
+        <div class="py-4 space-y-2 max-h-[300px] overflow-y-auto" id="history-list">
+            <!-- Dynamically populated -->
+        </div>
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+            <button onclick="clearHistory()" class="text-xs text-red-500 hover:underline flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">delete</span> Clear History
+            </button>
+        </div>
+    </div>
+
+    <!-- Protocols Modal -->
+    <div id="protocols-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-6 z-[60] hidden transition-transform duration-200">
+        <div class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                <span class="material-symbols-outlined text-teal-500">description</span> Lab Protocols
+            </h3>
+            <button onclick="hideModal('protocols-modal')" class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 dark:text-slate-500 transition-colors"><span class="material-symbols-outlined text-sm">close</span></button>
+        </div>
+        <div class="py-4 space-y-4 max-h-[350px] overflow-y-auto text-sm text-slate-600 dark:text-slate-400">
+            <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-1">1. Protein Characterization Protocol</h4>
+                <p class="text-xs">Query the sequence -> Fetch structures from EBI/RCSB -> Verify annotations with experimental evidence codes (EXP, IDA, IMP).</p>
+            </div>
+            <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-1">2. ESM-2 Function Prediction Run</h4>
+                <p class="text-xs">Compute sequence embeddings -> Process through GO Molecular Function multi-label classifier -> Inspect residue attention weights using thresholds >0.75 for hotspots.</p>
+            </div>
+            <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-1">3. In Silico Mutagenesis Calibration</h4>
+                <p class="text-xs">Select wild type residue -> Input target substitution variant -> Evaluate ΔΔG stability scoring (Pathogenic threshold: >1.8 kcal/mol).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-6 z-[60] hidden transition-transform duration-200">
+        <div class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                <span class="material-symbols-outlined text-teal-500">settings</span> Workspace Settings
+            </h3>
+            <button onclick="hideModal('settings-modal')" class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 dark:text-slate-500 transition-colors"><span class="material-symbols-outlined text-sm">close</span></button>
+        </div>
+        <div class="py-4 space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <span class="font-bold text-sm text-slate-800 dark:text-slate-200 block">Theme Selection</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Toggle between Light and Dark Mode</span>
+                </div>
+                <button onclick="toggleDarkMode()" id="dark-mode-toggle" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 px-3 py-1.5 rounded text-xs font-semibold flex items-center gap-1 text-slate-700 dark:text-slate-200">
+                    <span class="material-symbols-outlined text-xs">dark_mode</span> Dark Mode
+                </button>
+            </div>
+            <div class="space-y-2">
+                <label class="block font-bold text-sm text-slate-800 dark:text-slate-200">Backbone AI Model</label>
+                <select class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-750 text-slate-800 dark:text-slate-200 rounded px-3 py-2 text-sm outline-none">
+                    <option>ESM-2 (650M parameters) - Default</option>
+                    <option>ESM-2 (150M parameters)</option>
+                    <option>ESM-1b (650M parameters)</option>
+                </select>
+            </div>
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block">API Connectivity Status</span>
+                <div class="grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-400">
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span><span>UniProt API</span></div>
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span><span>AlphaFold DB</span></div>
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span><span>RCSB PDB</span></div>
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span><span>STRING API</span></div>
+                </div>
+            </div>
         </div>
     </div>
 

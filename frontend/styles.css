@@ -1,5 +1,179 @@
 /* ==================== ProtMind Design System — Core CSS ==================== */
 
+/* Dark Mode Override Rules */
+.dark body,
+.dark .bg-background,
+.dark .bg-surface,
+.dark .bg-surface-bright {
+    background-color: #030d12 !important;
+    color: #e1f4ff !important;
+}
+
+.dark .text-on-background,
+.dark .text-on-surface,
+.dark .text-slate-900,
+.dark .text-slate-800 {
+    color: #e1f4ff !important;
+}
+
+.dark .bg-surface-container-lowest,
+.dark .bg-white {
+    background-color: #081720 !important;
+}
+
+.dark .bg-surface-container-low,
+.dark .bg-slate-50 {
+    background-color: #0c202a !important;
+}
+
+.dark .bg-surface-container,
+.dark .bg-\[\#F0FAFA\] {
+    background-color: #122c3c !important;
+    border-color: #384a56 !important;
+}
+
+.dark .bg-surface-container-high {
+    background-color: #18374a !important;
+}
+
+.dark .bg-surface-container-highest {
+    background-color: #1f4258 !important;
+}
+
+.dark .text-on-surface-variant,
+.dark .text-slate-500,
+.dark .text-slate-650,
+.dark .text-slate-600 {
+    color: #9ab0bd !important;
+}
+
+.dark .border-outline-variant,
+.dark .border-slate-200,
+.dark .border-slate-800 {
+    border-color: #384a56 !important;
+}
+
+.dark .text-primary,
+.dark .text-teal-400 {
+    color: #67d9c8 !important;
+}
+
+.dark .bg-primary {
+    background-color: #008376 !important;
+    color: #ffffff !important;
+}
+
+.dark .bg-primary:hover {
+    background-color: #00a493 !important;
+}
+
+.dark .bg-primary-container {
+    background-color: #005048 !important;
+    color: #e1f4ff !important;
+}
+
+.dark .bg-secondary-container {
+    background-color: #16607f !important;
+    color: #e1f4ff !important;
+}
+
+.dark .bg-tertiary {
+    background-color: #274d4d !important;
+    color: #e1f4ff !important;
+}
+
+.dark .bg-outline {
+    background-color: #495654 !important;
+    color: #e1f4ff !important;
+}
+
+.dark .molecule-pattern {
+    background-color: #030d12 !important;
+    background-image: radial-gradient(#008376 1px, transparent 1px) !important;
+}
+
+.dark #topbar {
+    background-color: #0c202a !important;
+    border-bottom-color: #384a56 !important;
+}
+
+.dark #topbar .text-slate-900 {
+    color: #e1f4ff !important;
+}
+
+.dark #topbar a {
+    color: #9ab0bd !important;
+}
+
+.dark #topbar a:hover {
+    color: #67d9c8 !important;
+}
+
+.dark #sidebar {
+    background-color: #02090c !important;
+    border-right-color: #384a56 !important;
+}
+
+.dark #sidebar h1 {
+    color: #ffffff !important;
+}
+
+.dark .bg-surface-variant {
+    background-color: #1f4258 !important;
+    color: #e1f4ff !important;
+}
+
+.dark .border-outline\/20 {
+    border-color: rgba(56, 74, 86, 0.4) !important;
+}
+
+.dark .border-outline-variant\/30 {
+    border-color: rgba(56, 74, 86, 0.4) !important;
+}
+
+.dark .text-outline {
+    color: #6d7a77 !important;
+}
+
+.dark .hover\:bg-white\/5:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .hover\:bg-slate-50:hover {
+    background-color: #122c3c !important;
+}
+
+.dark .hover\:bg-slate-100:hover {
+    background-color: #18374a !important;
+}
+
+.dark .hover\:bg-white\/10:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark input, .dark select, .dark textarea {
+    background-color: #081720 !important;
+    color: #e1f4ff !important;
+    border-color: #384a56 !important;
+}
+
+/* Modals inside dark mode */
+.dark #settings-modal, .dark #history-modal, .dark #protocols-modal {
+    background-color: #081720 !important;
+    border-color: #384a56 !important;
+    color: #e1f4ff !important;
+}
+
+.dark #settings-modal h3, .dark #history-modal h3, .dark #protocols-modal h3 {
+    color: #e1f4ff !important;
+}
+
+.dark #settings-modal select {
+    background-color: #0c202a !important;
+    color: #e1f4ff !important;
+    border-color: #384a56 !important;
+}
+
 /* ---------- Global Resets ---------- */
 *, *::before, *::after {
     box-sizing: border-box;

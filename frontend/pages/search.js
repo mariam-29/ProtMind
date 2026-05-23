@@ -38,12 +38,38 @@ function renderSearch() {
     </div>`;
 }
 
-function doSearch() {
-    const v = document.getElementById('search-input')?.value?.trim();
-    if (v) navigate('protein');
+async function doSearch() {
+    const input = document.getElementById('search-input');
+    const query = input?.value?.trim();
+    if (!query) return;
+
+    const btn = document.querySelector('button[onclick="doSearch()"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">sync</span>`;
+    btn.disabled = true;
+
+    try {
+        const protein = await fetchProteinData(query);
+        if (protein) {
+            window.activeProtein = protein;
+            saveToHistory(protein);
+            navigate('protein');
+        } else {
+            alert(`Protein not found for query: ${query}`);
+        }
+    } catch (err) {
+        console.error(err);
+        alert(`Error fetching data: ${err.message}`);
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
 }
+
 function quickSearch(id) {
     const inp = document.getElementById('search-input');
-    if (inp) inp.value = id;
-    navigate('protein');
+    if (inp) {
+        inp.value = id;
+        doSearch();
+    }
 }
