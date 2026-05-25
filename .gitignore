@@ -4,4 +4,5 @@ __pycache__/
 *.pyd
 .pytest_cache/
 backend/protmind.db
+backend/cache.db
 .DS_Store

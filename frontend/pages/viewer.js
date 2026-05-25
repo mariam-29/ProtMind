@@ -96,24 +96,8 @@ async function initViewer() {
     const loading = document.getElementById('viewer-loading');
     if (loading) loading.style.display = 'flex';
 
-    const afUrl = `https://alphafold.ebi.ac.uk/files/AF-${p.id}-F1-model_v4.cif`;
-    const pdbId = p.pdbIds && p.pdbIds.length > 0 ? p.pdbIds[0] : '1TRZ';
-    const pdbUrl = `https://files.rcsb.org/download/${pdbId.toUpperCase()}.cif`;
-
-    let structureUrl = afUrl;
-    if (label) label.innerText = `AF-${p.id}-F1`;
-
-    try {
-        // Run check to see if AlphaFold has this accession
-        const check = await fetch(afUrl, { method: 'HEAD' });
-        if (!check.ok) {
-            structureUrl = pdbUrl;
-            if (label) label.innerText = `PDB-${pdbId.toUpperCase()}`;
-        }
-    } catch (e) {
-        structureUrl = pdbUrl;
-        if (label) label.innerText = `PDB-${pdbId.toUpperCase()}`;
-    }
+    let structureUrl = p.structure ? p.structure.url : `https://alphafold.ebi.ac.uk/files/AF-${p.id}-F1-model_v4.cif`;
+    if (label) label.innerText = p.structure ? p.structure.label : `AF-${p.id}-F1`;
 
     try {
         if (typeof molstar === 'undefined') {

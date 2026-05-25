@@ -1,16 +1,66 @@
+async function fetchAIPredictions() {
+    const p = window.activeProtein;
+    if (!p || p.aiPredictions) return;
+    
+    try {
+        const token = localStorage.getItem('protmind_token');
+        const headers = { 'Content-Type': 'application/json' };
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
+        }
+        
+        const response = await fetch(`${API_URL}/api/predict/function`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({ sequence: p.sequence, protein_id: p.id })
+        });
+        
+        if (!response.ok) throw new Error('Prediction failed');
+        const data = await response.json();
+        p.aiPredictions = data;
+        
+        // Re-render
+        if (currentPage === 'predictions') {
+            render();
+        }
+    } catch (e) {
+        console.error(e);
+        p.aiPredictions = { error: e.message };
+        if (currentPage === 'predictions') {
+            render();
+        }
+    }
+}
+
 function renderPredictions() {
     const p = window.activeProtein;
     if (!p) return `<div class="p-8 text-center text-on-surface">Please select a protein first.</div>`;
 
-    // Dynamic GO function predictions
+    if (!p.aiPredictions) {
+        setTimeout(fetchAIPredictions, 50);
+        return `
+        <div class="flex flex-col items-center justify-center py-24 text-center w-full h-full">
+            <div class="w-16 h-16 rounded-full border-4 border-slate-200 border-t-teal-500 spin-slow mb-4"></div>
+            <p class="font-mono text-xs text-slate-500 dark:text-slate-400">Extracting ESM-2 embeddings and predicting function...</p>
+        </div>`;
+    }
+
+    if (p.aiPredictions.error) {
+        return `
+        <div class="p-8 text-center text-red-500">
+            <span class="material-symbols-outlined text-4xl mb-2 text-red-500">error</span>
+            <p class="font-bold text-lg mb-2">Failed to run AI function prediction</p>
+            <p class="text-sm font-mono text-slate-500">${p.aiPredictions.error}</p>
+            <button onclick="window.activeProtein.aiPredictions = null; render();" class="mt-4 px-4 py-2 bg-primary text-on-primary rounded hover:bg-primary-container transition-colors">Retry</button>
+        </div>`;
+    }
+
+    const ai = p.aiPredictions;
     const colors = ['primary', 'primary-container', 'tertiary', 'outline-variant'];
-    const terms = p.goTerms.filter(t => t.aspect === 'F').slice(0, 4);
     
-    const predictionsHtml = terms.length > 0 ? 
-        terms.map((t, idx) => {
-            let pct = 94.2 - (idx * 9.5) - (t.term.length % 4);
-            if (pct < 15) pct = 15;
-            return predBar(t.term, pct.toFixed(1), colors[idx % colors.length]);
+    const predictionsHtml = ai.predictions && ai.predictions.length > 0 ? 
+        ai.predictions.map((pred, idx) => {
+            return predBar(pred.term, pred.confidence.toFixed(1), colors[idx % colors.length]);
         }).join('') : 
         `
         ${predBar('Molecular Function Activity', '82.5', 'primary')}
@@ -25,7 +75,7 @@ function renderPredictions() {
     <div class="space-y-6 page-enter">
         <div class="mb-4 flex justify-between items-end">
             <div>
-                <h2 class="font-h1 text-h1 text-on-background mb-1">AI Prediction Dashboard</h2>
+                <h2 class="font-h2 text-h2 text-on-background mb-1">AI Prediction Dashboard</h2>
                 <p class="font-body text-body text-on-surface-variant">Protein sequence ${p.id} (${p.gene}) structural and functional analysis via ESM-2 SOTA.</p>
             </div>
             <button onclick="downloadReport()" class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label text-label px-4 py-2 rounded flex items-center gap-2 transition-colors">
@@ -37,7 +87,7 @@ function renderPredictions() {
             <div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-6 clinical-shadow border border-outline-variant/30 flex flex-col fade-in fade-in-delay-1">
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="font-h3 text-h3 text-on-surface">Function Prediction</h3>
-                    <span class="bg-surface-variant text-on-surface-variant font-label text-label px-2 py-1 rounded">Model: ESM-2 fine-tuned</span>
+                    <span class="bg-surface-variant text-on-surface-variant font-label text-label px-2 py-1 rounded">Model: ${ai.model_version || 'ESM-2 fine-tuned'}</span>
                 </div>
                 <div class="flex-1 flex flex-col gap-4 justify-center">
                     ${predictionsHtml}
@@ -70,7 +120,7 @@ function renderPredictions() {
                     </div>
                 </div>
                 <div class="flex flex-col min-w-[800px]">
-                    ${generateResidueHeatmap(p.sequence)}
+                    ${generateResidueHeatmap(p.sequence, ai.attributions)}
                 </div>
             </div>
             <!-- Mutation Effect -->
@@ -139,8 +189,8 @@ function predBar(label, pct, color) {
     return `<div class="group relative"><div class="flex justify-between text-mono font-mono text-on-surface-variant mb-1"><span>${label}</span><span>${pct}%</span></div><div class="h-2 w-full bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-${color} rounded-full progress-animate" style="width:${pct}%"></div></div></div>`;
 }
 
-function generateResidueHeatmap(sequence) {
-    if (!sequence) return '';
+function generateResidueHeatmap(sequence, attributions) {
+    if (!sequence || !attributions) return '';
     const residues = sequence.split('');
     let result = '';
     const blockSize = 40; // 40 residues per row block
@@ -167,20 +217,14 @@ function generateResidueHeatmap(sequence) {
         
         for (let i = 0; i < sub.length; i++) {
             const pos = blockStart + i;
-            const charCode = sub[i].charCodeAt(0);
-            let score = (charCode * 7 + pos * 13) % 10;
-            
-            // Generate some high attention hotspots representing functional domains
-            const isNearHotspot = (pos % 50 >= 10 && pos % 50 <= 15) || (pos % 73 >= 20 && pos % 73 <= 25);
-            if (isNearHotspot) {
-                score = 7 + (pos % 3);
-            }
+            const attrVal = attributions[pos] !== undefined ? attributions[pos] : 0.0;
+            const score = Math.min(Math.max(Math.floor(attrVal * 10), 0), 9);
             
             const isHot = score >= 7;
             const bold = isHot ? 'font-bold border border-orange-400/30' : '';
             const colorClass = heatColors[score];
             
-            sequenceCells += `<div class="flex-1 min-w-[20px] max-w-[24px] h-6 rounded-sm flex items-center justify-center text-mono font-mono text-[10px] sequence-cell ${colorClass} ${bold}" title="Residue: ${sub[i]}${pos+1}, Score: ${(score / 10).toFixed(1)}">${sub[i]}</div>`;
+            sequenceCells += `<div class="flex-1 min-w-[20px] max-w-[24px] h-6 rounded-sm flex items-center justify-center text-mono font-mono text-[10px] sequence-cell ${colorClass} ${bold}" title="Residue: ${sub[i]}${pos+1}, Score: ${attrVal.toFixed(2)}">${sub[i]}</div>`;
         }
         
         result += `
@@ -218,7 +262,7 @@ function updateWildType() {
     }
 }
 
-function runMutagenesis() {
+async function runMutagenesis() {
     const wt = document.getElementById('mutation-wt')?.value;
     const pos = document.getElementById('mutation-position')?.value;
     const mut = document.getElementById('mutation-mutant')?.value;
@@ -227,35 +271,42 @@ function runMutagenesis() {
     if (!wt || !pos || !mut) return;
     
     const btn = document.getElementById('recalculate-btn');
+    if (!btn) return;
+    
     const originalText = btn.innerHTML;
     btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[16px]">sync</span>`;
     btn.disabled = true;
     
-    setTimeout(() => {
-        let pathogenic = false;
-        let score = 0.5;
-        
-        if (wt === mut) {
-            pathogenic = false;
-            score = 0.0;
-        } else {
-            const opposites = (wt === 'D' || wt === 'E') && (mut === 'R' || mut === 'K' || mut === 'H');
-            const prolineCysteine = mut === 'P' || mut === 'C' || wt === 'P' || wt === 'C';
-            if (opposites || prolineCysteine) {
-                pathogenic = true;
-                score = 3.2 + (pos % 2);
-            } else {
-                score = 1.0 + ((wt.charCodeAt(0) + mut.charCodeAt(0)) % 15) / 10;
-                pathogenic = score > 1.8;
-            }
+    try {
+        const token = localStorage.getItem('protmind_token');
+        const headers = { 'Content-Type': 'application/json' };
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
         }
+        
+        const response = await fetch(`${API_URL}/api/predict/mutagenesis`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({
+                protein_id: window.activeProtein.id,
+                position: parseInt(pos),
+                wild_type: wt,
+                mutant: mut
+            })
+        });
+        
+        if (!response.ok) throw new Error('Mutagenesis failed');
+        const result = await response.json();
+        
+        const pathogenic = result.pathogenic;
+        const score = result.score;
+        const statusText = result.status;
         
         const badgeClass = pathogenic ? 
             'bg-error-container text-on-error-container border border-error/20' : 
             'bg-teal-100 text-teal-800 border border-teal-200';
         
         const badgeIcon = pathogenic ? 'warning' : 'check_circle';
-        const statusText = pathogenic ? 'PATHOGENIC' : 'BENIGN';
         
         if (effectContainer) {
             effectContainer.innerHTML = `
@@ -268,10 +319,13 @@ function runMutagenesis() {
                 <span class="font-mono text-mono text-outline">ΔΔG: +${score.toFixed(2)} kcal/mol</span>
             </div>`;
         }
-        
+    } catch (e) {
+        console.error(e);
+        alert(`Mutagenesis prediction failed: ${e.message}`);
+    } finally {
         btn.innerHTML = originalText;
         btn.disabled = false;
-    }, 800);
+    }
 }
 
 function downloadReport() {

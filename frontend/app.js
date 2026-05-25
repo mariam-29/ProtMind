@@ -169,32 +169,21 @@ async function checkAuthSession() {
     }
 }
 
-// Fetch protein data from UniProt API
+// Fetch protein data from backend
 async function fetchProteinData(query) {
-    const isAccession = /^[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}[0-9]){1,2}$/i.test(query.trim());
-    let accession = query.trim();
-
-    if (!isAccession) {
-        // Search by gene name in human taxonomy
-        const searchUrl = `https://rest.uniprot.org/uniprotkb/search?query=gene_exact:${encodeURIComponent(accession)}%20AND%20taxonomy_id:9606&format=json&size=1`;
-        const response = await fetch(searchUrl);
-        if (!response.ok) throw new Error('Search failed');
-        const searchData = await response.json();
-        if (!searchData.results || searchData.results.length === 0) {
-            return null;
-        }
-        return parseUniProtResponse(searchData.results[0]);
-    } else {
-        // Fetch accession directly
-        const fetchUrl = `https://rest.uniprot.org/uniprotkb/${encodeURIComponent(accession)}.json`;
-        const response = await fetch(fetchUrl);
-        if (!response.ok) {
-            if (response.status === 404) return null;
-            throw new Error('Fetch failed');
-        }
-        const data = await response.json();
-        return parseUniProtResponse(data);
+    const token = localStorage.getItem('protmind_token');
+    const headers = {};
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
     }
+    
+    const response = await fetch(`${API_URL}/api/protein/${encodeURIComponent(query.trim())}`, { headers });
+    if (!response.ok) {
+        if (response.status === 404) return null;
+        const errData = await response.json().catch(() => ({ detail: 'Search failed' }));
+        throw new Error(errData.detail || 'Search failed');
+    }
+    return await response.json();
 }
 
 function parseUniProtResponse(data) {
