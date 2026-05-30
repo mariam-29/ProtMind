@@ -97,6 +97,7 @@ async function initViewer() {
     if (loading) loading.style.display = 'flex';
 
     let structureUrl = p.structure ? p.structure.url : `https://alphafold.ebi.ac.uk/files/AF-${p.id}-F1-model_v4.cif`;
+    const proxyUrl = `${API_URL}/api/structure/proxy?url=${encodeURIComponent(structureUrl)}`;
     if (label) label.innerText = p.structure ? p.structure.label : `AF-${p.id}-F1`;
 
     try {
@@ -117,7 +118,7 @@ async function initViewer() {
         currentViewerInstance = viewer;
 
         // Load structure
-        await viewer.loadStructureFromUrl(structureUrl, 'cif');
+        await viewer.loadStructureFromUrl(proxyUrl, 'mmcif');
 
         if (loading) loading.style.display = 'none';
 

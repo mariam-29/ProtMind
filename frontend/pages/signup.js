@@ -37,7 +37,10 @@ function renderSignup() {
                         <label class="font-label text-label text-on-surface-variant" for="signup-password">Password</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span class="material-symbols-outlined text-outline text-[18px]">lock</span></div>
-                            <input id="signup-password" class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-lg font-body text-body text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Min. 8 characters" type="password" required minlength="8"/>
+                            <input id="signup-password" class="w-full pl-10 pr-10 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-lg font-body text-body text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Min. 8 characters" type="password" required minlength="8"/>
+                            <div onclick="togglePasswordVisibility('signup-password', this)" class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-outline hover:text-on-surface transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">visibility_off</span>
+                            </div>
                         </div>
                     </div>
                     <div class="flex flex-col gap-2">

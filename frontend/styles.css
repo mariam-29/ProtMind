@@ -22,7 +22,8 @@
 }
 
 .dark .bg-surface-container-low,
-.dark .bg-slate-50 {
+.dark .bg-slate-50,
+.dark .bg-\[\#fafafa\] {
     background-color: #0c202a !important;
 }
 
@@ -38,6 +39,29 @@
 
 .dark .bg-surface-container-highest {
     background-color: #1f4258 !important;
+}
+
+/* Table dark mode overrides */
+.dark tbody tr:nth-child(odd),
+.dark tr.odd\:bg-surface-container-lowest {
+    background-color: #081720 !important;
+}
+
+.dark tbody tr:nth-child(even),
+.dark tr.even\:bg-surface-container-low {
+    background-color: #0c202a !important;
+}
+
+.dark td {
+    color: #e1f4ff !important;
+}
+
+.dark td a {
+    color: #67d9c8 !important;
+}
+
+.dark td .text-on-surface-variant {
+    color: #9ab0bd !important;
 }
 
 .dark .text-on-surface-variant,

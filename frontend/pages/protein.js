@@ -53,7 +53,7 @@ function renderProtein() {
             <div class="px-6 py-4 border-b border-outline-variant/30 flex justify-between items-center bg-surface-bright">
                 <h3 class="font-h3 text-h3 text-on-surface">Amino Acid Sequence</h3>
             </div>
-            <div class="p-6 overflow-x-auto bg-[#fafafa]">
+            <div class="p-6 overflow-x-auto bg-slate-50">
                 <div class="grid grid-cols-[60px_1fr] gap-y-3 whitespace-nowrap">
                     ${formatSequence(p.sequence)}
                 </div>

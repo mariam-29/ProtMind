@@ -119,7 +119,7 @@ function renderNav() {
 // Hash-based routing
 window.addEventListener('hashchange', () => {
     const hash = window.location.hash.slice(1);
-    if (hash) { currentPage = hash; render(); }
+    if (hash && hash !== currentPage) { navigate(hash); }
 });
 
 // Initial load check auth session first
@@ -169,6 +169,21 @@ async function checkAuthSession() {
     }
 }
 
+function handleSessionExpired() {
+    localStorage.removeItem('protmind_token');
+    window.currentUser = null;
+    updateProfileUI();
+    navigate('login');
+    setTimeout(() => {
+        const errorDiv = document.getElementById('login-error');
+        if (errorDiv) {
+            errorDiv.innerText = 'Your session has expired. Please sign in again.';
+            errorDiv.classList.remove('hidden');
+        }
+    }, 100);
+}
+window.handleSessionExpired = handleSessionExpired;
+
 // Fetch protein data from backend
 async function fetchProteinData(query) {
     const token = localStorage.getItem('protmind_token');
@@ -179,6 +194,10 @@ async function fetchProteinData(query) {
     
     const response = await fetch(`${API_URL}/api/protein/${encodeURIComponent(query.trim())}`, { headers });
     if (!response.ok) {
+        if (response.status === 401) {
+            handleSessionExpired();
+            throw new Error('Session expired. Please log in again.');
+        }
         if (response.status === 404) return null;
         const errData = await response.json().catch(() => ({ detail: 'Search failed' }));
         throw new Error(errData.detail || 'Search failed');
@@ -553,4 +572,19 @@ window.addEventListener('click', (e) => {
         dropdown.classList.add('hidden');
     }
 });
+
+function togglePasswordVisibility(inputId, btnEl) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    
+    const icon = btnEl.querySelector('.material-symbols-outlined');
+    if (input.type === 'password') {
+        input.type = 'text';
+        if (icon) icon.innerText = 'visibility';
+    } else {
+        input.type = 'password';
+        if (icon) icon.innerText = 'visibility_off';
+    }
+}
+window.togglePasswordVisibility = togglePasswordVisibility;
 

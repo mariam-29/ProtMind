@@ -94,6 +94,26 @@ class ProtMindRAG:
             list: List of dicts representing the retrieved chunks with score and metadata.
         """
         if self.index is None or self.model is None or not self.chunks:
+            # Fallback keyword match if model/index is not loaded
+            if self.chunks:
+                logger.warning("RAG Index/Model not loaded. Using keyword fallback.")
+                results = []
+                # Clean and split query into search words
+                query_words = [w.strip() for w in query.lower().replace(",", " ").replace(";", " ").split() if w.strip()]
+                query_words_set = set(query_words)
+                if not query_words_set:
+                    return []
+                for chunk in self.chunks:
+                    content_lower = chunk.get("content", "").lower()
+                    overlap = sum(1 for word in query_words_set if word in content_lower)
+                    if overlap > 0:
+                        score = float(overlap) / len(query_words_set)
+                        chunk_copy = chunk.copy()
+                        chunk_copy["similarity_score"] = score
+                        results.append(chunk_copy)
+                results = sorted(results, key=lambda x: x["similarity_score"], reverse=True)
+                return results[:top_k]
+
             logger.error("RAG Index is not initialized. Cannot perform search.")
             return []
             

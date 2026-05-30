@@ -1,0 +1,3278 @@
+{
+  "go_terms": [
+    "GO:0005179",
+    "GO:0005576",
+    "GO:0005102",
+    "GO:0000003",
+    "GO:0000004",
+    "GO:0000005",
+    "GO:0000006",
+    "GO:0000007",
+    "GO:0000008",
+    "GO:0000009",
+    "GO:0000010",
+    "GO:0000011",
+    "GO:0000012",
+    "GO:0000013",
+    "GO:0000014",
+    "GO:0000015",
+    "GO:0000016",
+    "GO:0000017",
+    "GO:0000018",
+    "GO:0000019",
+    "GO:0000020",
+    "GO:0000021",
+    "GO:0000022",
+    "GO:0000023",
+    "GO:0000024",
+    "GO:0000025",
+    "GO:0000026",
+    "GO:0000027",
+    "GO:0000028",
+    "GO:0000029",
+    "GO:0000030",
+    "GO:0000031",
+    "GO:0000032",
+    "GO:0000033",
+    "GO:0000034",
+    "GO:0000035",
+    "GO:0000036",
+    "GO:0000037",
+    "GO:0000038",
+    "GO:0000039",
+    "GO:0000040",
+    "GO:0000041",
+    "GO:0000042",
+    "GO:0000043",
+    "GO:0000044",
+    "GO:0000045",
+    "GO:0000046",
+    "GO:0000047",
+    "GO:0000048",
+    "GO:0000049",
+    "GO:0000050",
+    "GO:0000051",
+    "GO:0000052",
+    "GO:0000053",
+    "GO:0000054",
+    "GO:0000055",
+    "GO:0000056",
+    "GO:0000057",
+    "GO:0000058",
+    "GO:0000059",
+    "GO:0000060",
+    "GO:0000061",
+    "GO:0000062",
+    "GO:0000063",
+    "GO:0000064",
+    "GO:0000065",
+    "GO:0000066",
+    "GO:0000067",
+    "GO:0000068",
+    "GO:0000069",
+    "GO:0000070",
+    "GO:0000071",
+    "GO:0000072",
+    "GO:0000073",
+    "GO:0000074",
+    "GO:0000075",
+    "GO:0000076",
+    "GO:0000077",
+    "GO:0000078",
+    "GO:0000079",
+    "GO:0000080",
+    "GO:0000081",
+    "GO:0000082",
+    "GO:0000083",
+    "GO:0000084",
+    "GO:0000085",
+    "GO:0000086",
+    "GO:0000087",
+    "GO:0000088",
+    "GO:0000089",
+    "GO:0000090",
+    "GO:0000091",
+    "GO:0000092",
+    "GO:0000093",
+    "GO:0000094",
+    "GO:0000095",
+    "GO:0000096",
+    "GO:0000097",
+    "GO:0000098",
+    "GO:0000099",
+    "GO:0000100",
+    "GO:0000101",
+    "GO:0000102",
+    "GO:0000103",
+    "GO:0000104",
+    "GO:0000105",
+    "GO:0000106",
+    "GO:0000107",
+    "GO:0000108",
+    "GO:0000109",
+    "GO:0000110",
+    "GO:0000111",
+    "GO:0000112",
+    "GO:0000113",
+    "GO:0000114",
+    "GO:0000115",
+    "GO:0000116",
+    "GO:0000117",
+    "GO:0000118",
+    "GO:0000119",
+    "GO:0000120",
+    "GO:0000121",
+    "GO:0000122",
+    "GO:0000123",
+    "GO:0000124",
+    "GO:0000125",
+    "GO:0000126",
+    "GO:0000127",
+    "GO:0000128",
+    "GO:0000129",
+    "GO:0000130",
+    "GO:0000131",
+    "GO:0000132",
+    "GO:0000133",
+    "GO:0000134",
+    "GO:0000135",
+    "GO:0000136",
+    "GO:0000137",
+    "GO:0000138",
+    "GO:0000139",
+    "GO:0000140",
+    "GO:0000141",
+    "GO:0000142",
+    "GO:0000143",
+    "GO:0000144",
+    "GO:0000145",
+    "GO:0000146",
+    "GO:0000147",
+    "GO:0000148",
+    "GO:0000149",
+    "GO:0000150",
+    "GO:0000151",
+    "GO:0000152",
+    "GO:0000153",
+    "GO:0000154",
+    "GO:0000155",
+    "GO:0000156",
+    "GO:0000157",
+    "GO:0000158",
+    "GO:0000159",
+    "GO:0000160",
+    "GO:0000161",
+    "GO:0000162",
+    "GO:0000163",
+    "GO:0000164",
+    "GO:0000165",
+    "GO:0000166",
+    "GO:0000167",
+    "GO:0000168",
+    "GO:0000169",
+    "GO:0000170",
+    "GO:0000171",
+    "GO:0000172",
+    "GO:0000173",
+    "GO:0000174",
+    "GO:0000175",
+    "GO:0000176",
+    "GO:0000177",
+    "GO:0000178",
+    "GO:0000179",
+    "GO:0000180",
+    "GO:0000181",
+    "GO:0000182",
+    "GO:0000183",
+    "GO:0000184",
+    "GO:0000185",
+    "GO:0000186",
+    "GO:0000187",
+    "GO:0000188",
+    "GO:0000189",
+    "GO:0000190",
+    "GO:0000191",
+    "GO:0000192",
+    "GO:0000193",
+    "GO:0000194",
+    "GO:0000195",
+    "GO:0000196",
+    "GO:0000197",
+    "GO:0000198",
+    "GO:0000199",
+    "GO:0000200",
+    "GO:0000201",
+    "GO:0000202",
+    "GO:0000203",
+    "GO:0000204",
+    "GO:0000205",
+    "GO:0000206",
+    "GO:0000207",
+    "GO:0000208",
+    "GO:0000209",
+    "GO:0000210",
+    "GO:0000211",
+    "GO:0000212",
+    "GO:0000213",
+    "GO:0000214",
+    "GO:0000215",
+    "GO:0000216",
+    "GO:0000217",
+    "GO:0000218",
+    "GO:0000219",
+    "GO:0000220",
+    "GO:0000221",
+    "GO:0000222",
+    "GO:0000223",
+    "GO:0000224",
+    "GO:0000225",
+    "GO:0000226",
+    "GO:0000227",
+    "GO:0000228",
+    "GO:0000229",
+    "GO:0000230",
+    "GO:0000231",
+    "GO:0000232",
+    "GO:0000233",
+    "GO:0000234",
+    "GO:0000235",
+    "GO:0000236",
+    "GO:0000237",
+    "GO:0000238",
+    "GO:0000239",
+    "GO:0000240",
+    "GO:0000241",
+    "GO:0000242",
+    "GO:0000243",
+    "GO:0000244",
+    "GO:0000245",
+    "GO:0000246",
+    "GO:0000247",
+    "GO:0000248",
+    "GO:0000249",
+    "GO:0000250",
+    "GO:0000251",
+    "GO:0000252",
+    "GO:0000253",
+    "GO:0000254",
+    "GO:0000255",
+    "GO:0000256",
+    "GO:0000257",
+    "GO:0000258",
+    "GO:0000259",
+    "GO:0000260",
+    "GO:0000261",
+    "GO:0000262",
+    "GO:0000263",
+    "GO:0000264",
+    "GO:0000265",
+    "GO:0000266",
+    "GO:0000267",
+    "GO:0000268",
+    "GO:0000269",
+    "GO:0000270",
+    "GO:0000271",
+    "GO:0000272",
+    "GO:0000273",
+    "GO:0000274",
+    "GO:0000275",
+    "GO:0000276",
+    "GO:0000277",
+    "GO:0000278",
+    "GO:0000279",
+    "GO:0000280",
+    "GO:0000281",
+    "GO:0000282",
+    "GO:0000283",
+    "GO:0000284",
+    "GO:0000285",
+    "GO:0000286",
+    "GO:0000287",
+    "GO:0000288",
+    "GO:0000289",
+    "GO:0000290",
+    "GO:0000291",
+    "GO:0000292",
+    "GO:0000293",
+    "GO:0000294",
+    "GO:0000295",
+    "GO:0000296",
+    "GO:0000297",
+    "GO:0000298",
+    "GO:0000299",
+    "GO:0000300",
+    "GO:0000301",
+    "GO:0000302",
+    "GO:0000303",
+    "GO:0000304",
+    "GO:0000305",
+    "GO:0000306",
+    "GO:0000307",
+    "GO:0000308",
+    "GO:0000309",
+    "GO:0000310",
+    "GO:0000311",
+    "GO:0000312",
+    "GO:0000313",
+    "GO:0000314",
+    "GO:0000315",
+    "GO:0000316",
+    "GO:0000317",
+    "GO:0000318",
+    "GO:0000319",
+    "GO:0000320",
+    "GO:0000321",
+    "GO:0000322",
+    "GO:0000323",
+    "GO:0000324",
+    "GO:0000325",
+    "GO:0000326",
+    "GO:0000327",
+    "GO:0000328",
+    "GO:0000329",
+    "GO:0000330",
+    "GO:0000331",
+    "GO:0000332",
+    "GO:0000333",
+    "GO:0000334",
+    "GO:0000335",
+    "GO:0000336",
+    "GO:0000337",
+    "GO:0000338",
+    "GO:0000339",
+    "GO:0000340",
+    "GO:0000341",
+    "GO:0000342",
+    "GO:0000343",
+    "GO:0000344",
+    "GO:0000345",
+    "GO:0000346",
+    "GO:0000347",
+    "GO:0000348",
+    "GO:0000349",
+    "GO:0000350",
+    "GO:0000351",
+    "GO:0000352",
+    "GO:0000353",
+    "GO:0000354",
+    "GO:0000355",
+    "GO:0000356",
+    "GO:0000357",
+    "GO:0000358",
+    "GO:0000359",
+    "GO:0000360",
+    "GO:0000361",
+    "GO:0000362",
+    "GO:0000363",
+    "GO:0000364",
+    "GO:0000365",
+    "GO:0000366",
+    "GO:0000367",
+    "GO:0000368",
+    "GO:0000369",
+    "GO:0000370",
+    "GO:0000371",
+    "GO:0000372",
+    "GO:0000373",
+    "GO:0000374",
+    "GO:0000375",
+    "GO:0000376",
+    "GO:0000377",
+    "GO:0000378",
+    "GO:0000379",
+    "GO:0000380",
+    "GO:0000381",
+    "GO:0000382",
+    "GO:0000383",
+    "GO:0000384",
+    "GO:0000385",
+    "GO:0000386",
+    "GO:0000387",
+    "GO:0000388",
+    "GO:0000389",
+    "GO:0000390",
+    "GO:0000391",
+    "GO:0000392",
+    "GO:0000393",
+    "GO:0000394",
+    "GO:0000395",
+    "GO:0000396",
+    "GO:0000397",
+    "GO:0000398",
+    "GO:0000399",
+    "GO:0000400",
+    "GO:0000401",
+    "GO:0000402",
+    "GO:0000403",
+    "GO:0000404",
+    "GO:0000405",
+    "GO:0000406",
+    "GO:0000407",
+    "GO:0000408",
+    "GO:0000409",
+    "GO:0000410",
+    "GO:0000411",
+    "GO:0000412",
+    "GO:0000413",
+    "GO:0000414",
+    "GO:0000415",
+    "GO:0000416",
+    "GO:0000417",
+    "GO:0000418",
+    "GO:0000419",
+    "GO:0000420",
+    "GO:0000421",
+    "GO:0000422",
+    "GO:0000423",
+    "GO:0000424",
+    "GO:0000425",
+    "GO:0000426",
+    "GO:0000427",
+    "GO:0000428",
+    "GO:0000429",
+    "GO:0000430",
+    "GO:0000431",
+    "GO:0000432",
+    "GO:0000433",
+    "GO:0000434",
+    "GO:0000435",
+    "GO:0000436",
+    "GO:0000437",
+    "GO:0000438",
+    "GO:0000439",
+    "GO:0000440",
+    "GO:0000441",
+    "GO:0000442",
+    "GO:0000443",
+    "GO:0000444",
+    "GO:0000445",
+    "GO:0000446",
+    "GO:0000447",
+    "GO:0000448",
+    "GO:0000449",
+    "GO:0000450",
+    "GO:0000451",
+    "GO:0000452",
+    "GO:0000453",
+    "GO:0000454",
+    "GO:0000455",
+    "GO:0000456",
+    "GO:0000457",
+    "GO:0000458",
+    "GO:0000459",
+    "GO:0000460",
+    "GO:0000461",
+    "GO:0000462",
+    "GO:0000463",
+    "GO:0000464",
+    "GO:0000465",
+    "GO:0000466",
+    "GO:0000467",
+    "GO:0000468",
+    "GO:0000469",
+    "GO:0000470",
+    "GO:0000471",
+    "GO:0000472",
+    "GO:0000473",
+    "GO:0000474",
+    "GO:0000475",
+    "GO:0000476",
+    "GO:0000477",
+    "GO:0000478",
+    "GO:0000479",
+    "GO:0000480",
+    "GO:0000481",
+    "GO:0000482",
+    "GO:0000483",
+    "GO:0000484",
+    "GO:0000485",
+    "GO:0000486",
+    "GO:0000487",
+    "GO:0000488",
+    "GO:0000489",
+    "GO:0000490",
+    "GO:0000491",
+    "GO:0000492",
+    "GO:0000493",
+    "GO:0000494",
+    "GO:0000495",
+    "GO:0000496",
+    "GO:0000497",
+    "GO:0000498",
+    "GO:0000499",
+    "GO:0000500",
+    "GO:0000501",
+    "GO:0000502",
+    "GO:0000503",
+    "GO:0000504",
+    "GO:0000505",
+    "GO:0000506",
+    "GO:0000507",
+    "GO:0000508",
+    "GO:0000509",
+    "GO:0000510",
+    "GO:0000511",
+    "GO:0000512",
+    "GO:0000513",
+    "GO:0000514",
+    "GO:0000515",
+    "GO:0000516",
+    "GO:0000517",
+    "GO:0000518",
+    "GO:0000519",
+    "GO:0000520",
+    "GO:0000521",
+    "GO:0000522",
+    "GO:0000523",
+    "GO:0000524",
+    "GO:0000525",
+    "GO:0000526",
+    "GO:0000527",
+    "GO:0000528",
+    "GO:0000529",
+    "GO:0000530",
+    "GO:0000531",
+    "GO:0000532",
+    "GO:0000533",
+    "GO:0000534",
+    "GO:0000535",
+    "GO:0000536",
+    "GO:0000537",
+    "GO:0000538",
+    "GO:0000539",
+    "GO:0000540",
+    "GO:0000541",
+    "GO:0000542",
+    "GO:0000543",
+    "GO:0000544",
+    "GO:0000545",
+    "GO:0000546",
+    "GO:0000547",
+    "GO:0000548",
+    "GO:0000549",
+    "GO:0000550",
+    "GO:0000551",
+    "GO:0000552",
+    "GO:0000553",
+    "GO:0000554",
+    "GO:0000555",
+    "GO:0000556",
+    "GO:0000557",
+    "GO:0000558",
+    "GO:0000559",
+    "GO:0000560",
+    "GO:0000561",
+    "GO:0000562",
+    "GO:0000563",
+    "GO:0000564",
+    "GO:0000565",
+    "GO:0000566",
+    "GO:0000567",
+    "GO:0000568",
+    "GO:0000569",
+    "GO:0000570",
+    "GO:0000571",
+    "GO:0000572",
+    "GO:0000573",
+    "GO:0000574",
+    "GO:0000575",
+    "GO:0000576",
+    "GO:0000577",
+    "GO:0000578",
+    "GO:0000579",
+    "GO:0000580",
+    "GO:0000581",
+    "GO:0000582",
+    "GO:0000583",
+    "GO:0000584",
+    "GO:0000585",
+    "GO:0000586",
+    "GO:0000587",
+    "GO:0000588",
+    "GO:0000589",
+    "GO:0000590",
+    "GO:0000591",
+    "GO:0000592",
+    "GO:0000593",
+    "GO:0000594",
+    "GO:0000595",
+    "GO:0000596",
+    "GO:0000597",
+    "GO:0000598",
+    "GO:0000599",
+    "GO:0000600",
+    "GO:0000601",
+    "GO:0000602",
+    "GO:0000603",
+    "GO:0000604",
+    "GO:0000605",
+    "GO:0000606",
+    "GO:0000607",
+    "GO:0000608",
+    "GO:0000609",
+    "GO:0000610",
+    "GO:0000611",
+    "GO:0000612",
+    "GO:0000613",
+    "GO:0000614",
+    "GO:0000615",
+    "GO:0000616",
+    "GO:0000617",
+    "GO:0000618",
+    "GO:0000619",
+    "GO:0000620",
+    "GO:0000621",
+    "GO:0000622",
+    "GO:0000623",
+    "GO:0000624",
+    "GO:0000625",
+    "GO:0000626",
+    "GO:0000627",
+    "GO:0000628",
+    "GO:0000629",
+    "GO:0000630",
+    "GO:0000631",
+    "GO:0000632",
+    "GO:0000633",
+    "GO:0000634",
+    "GO:0000635",
+    "GO:0000636",
+    "GO:0000637",
+    "GO:0000638",
+    "GO:0000639",
+    "GO:0000640",
+    "GO:0000641",
+    "GO:0000642",
+    "GO:0000643",
+    "GO:0000644",
+    "GO:0000645",
+    "GO:0000646",
+    "GO:0000647",
+    "GO:0000648",
+    "GO:0000649",
+    "GO:0000650",
+    "GO:0000651",
+    "GO:0000652",
+    "GO:0000653",
+    "GO:0000654",
+    "GO:0000655",
+    "GO:0000656",
+    "GO:0000657",
+    "GO:0000658",
+    "GO:0000659",
+    "GO:0000660",
+    "GO:0000661",
+    "GO:0000662",
+    "GO:0000663",
+    "GO:0000664",
+    "GO:0000665",
+    "GO:0000666",
+    "GO:0000667",
+    "GO:0000668",
+    "GO:0000669",
+    "GO:0000670",
+    "GO:0000671",
+    "GO:0000672",
+    "GO:0000673",
+    "GO:0000674",
+    "GO:0000675",
+    "GO:0000676",
+    "GO:0000677",
+    "GO:0000678",
+    "GO:0000679",
+    "GO:0000680",
+    "GO:0000681",
+    "GO:0000682",
+    "GO:0000683",
+    "GO:0000684",
+    "GO:0000685",
+    "GO:0000686",
+    "GO:0000687",
+    "GO:0000688",
+    "GO:0000689",
+    "GO:0000690",
+    "GO:0000691",
+    "GO:0000692",
+    "GO:0000693",
+    "GO:0000694",
+    "GO:0000695",
+    "GO:0000696",
+    "GO:0000697",
+    "GO:0000698",
+    "GO:0000699",
+    "GO:0000700",
+    "GO:0000701",
+    "GO:0000702",
+    "GO:0000703",
+    "GO:0000704",
+    "GO:0000705",
+    "GO:0000706",
+    "GO:0000707",
+    "GO:0000708",
+    "GO:0000709",
+    "GO:0000710",
+    "GO:0000711",
+    "GO:0000712",
+    "GO:0000713",
+    "GO:0000714",
+    "GO:0000715",
+    "GO:0000716",
+    "GO:0000717",
+    "GO:0000718",
+    "GO:0000719",
+    "GO:0000720",
+    "GO:0000721",
+    "GO:0000722",
+    "GO:0000723",
+    "GO:0000724",
+    "GO:0000725",
+    "GO:0000726",
+    "GO:0000727",
+    "GO:0000728",
+    "GO:0000729",
+    "GO:0000730",
+    "GO:0000731",
+    "GO:0000732",
+    "GO:0000733",
+    "GO:0000734",
+    "GO:0000735",
+    "GO:0000736",
+    "GO:0000737",
+    "GO:0000738",
+    "GO:0000739",
+    "GO:0000740",
+    "GO:0000741",
+    "GO:0000742",
+    "GO:0000743",
+    "GO:0000744",
+    "GO:0000745",
+    "GO:0000746",
+    "GO:0000747",
+    "GO:0000748",
+    "GO:0000749",
+    "GO:0000750",
+    "GO:0000751",
+    "GO:0000752",
+    "GO:0000753",
+    "GO:0000754",
+    "GO:0000755",
+    "GO:0000756",
+    "GO:0000757",
+    "GO:0000758",
+    "GO:0000759",
+    "GO:0000760",
+    "GO:0000761",
+    "GO:0000762",
+    "GO:0000763",
+    "GO:0000764",
+    "GO:0000765",
+    "GO:0000766",
+    "GO:0000767",
+    "GO:0000768",
+    "GO:0000769",
+    "GO:0000770",
+    "GO:0000771",
+    "GO:0000772",
+    "GO:0000773",
+    "GO:0000774",
+    "GO:0000775",
+    "GO:0000776",
+    "GO:0000777",
+    "GO:0000778",
+    "GO:0000779",
+    "GO:0000780",
+    "GO:0000781",
+    "GO:0000782",
+    "GO:0000783",
+    "GO:0000784",
+    "GO:0000785",
+    "GO:0000786",
+    "GO:0000787",
+    "GO:0000788",
+    "GO:0000789",
+    "GO:0000790",
+    "GO:0000791",
+    "GO:0000792",
+    "GO:0000793",
+    "GO:0000794",
+    "GO:0000795",
+    "GO:0000796",
+    "GO:0000797",
+    "GO:0000798",
+    "GO:0000799",
+    "GO:0000800",
+    "GO:0000801",
+    "GO:0000802",
+    "GO:0000803",
+    "GO:0000804",
+    "GO:0000805",
+    "GO:0000806",
+    "GO:0000807",
+    "GO:0000808",
+    "GO:0000809",
+    "GO:0000810",
+    "GO:0000811",
+    "GO:0000812",
+    "GO:0000813",
+    "GO:0000814",
+    "GO:0000815",
+    "GO:0000816",
+    "GO:0000817"
+  ],
+  "vocabulary": {
+    "GO:0005179": {
+      "name": "hormone activity"
+    },
+    "GO:0005576": {
+      "name": "extracellular region"
+    },
+    "GO:0005102": {
+      "name": "receptor binding"
+    },
+    "GO:0000003": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000004": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000005": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000006": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000007": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000008": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000009": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000010": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000011": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000012": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000013": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000014": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000015": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000016": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000017": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000018": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000019": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000020": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000021": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000022": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000023": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000024": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000025": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000026": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000027": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000028": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000029": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000030": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000031": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000032": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000033": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000034": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000035": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000036": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000037": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000038": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000039": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000040": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000041": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000042": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000043": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000044": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000045": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000046": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000047": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000048": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000049": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000050": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000051": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000052": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000053": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000054": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000055": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000056": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000057": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000058": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000059": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000060": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000061": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000062": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000063": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000064": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000065": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000066": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000067": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000068": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000069": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000070": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000071": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000072": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000073": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000074": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000075": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000076": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000077": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000078": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000079": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000080": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000081": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000082": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000083": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000084": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000085": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000086": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000087": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000088": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000089": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000090": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000091": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000092": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000093": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000094": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000095": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000096": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000097": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000098": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000099": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000100": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000101": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000102": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000103": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000104": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000105": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000106": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000107": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000108": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000109": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000110": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000111": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000112": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000113": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000114": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000115": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000116": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000117": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000118": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000119": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000120": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000121": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000122": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000123": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000124": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000125": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000126": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000127": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000128": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000129": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000130": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000131": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000132": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000133": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000134": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000135": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000136": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000137": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000138": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000139": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000140": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000141": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000142": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000143": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000144": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000145": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000146": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000147": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000148": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000149": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000150": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000151": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000152": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000153": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000154": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000155": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000156": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000157": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000158": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000159": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000160": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000161": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000162": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000163": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000164": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000165": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000166": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000167": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000168": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000169": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000170": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000171": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000172": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000173": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000174": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000175": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000176": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000177": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000178": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000179": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000180": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000181": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000182": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000183": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000184": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000185": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000186": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000187": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000188": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000189": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000190": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000191": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000192": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000193": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000194": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000195": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000196": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000197": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000198": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000199": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000200": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000201": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000202": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000203": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000204": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000205": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000206": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000207": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000208": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000209": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000210": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000211": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000212": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000213": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000214": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000215": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000216": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000217": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000218": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000219": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000220": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000221": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000222": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000223": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000224": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000225": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000226": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000227": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000228": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000229": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000230": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000231": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000232": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000233": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000234": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000235": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000236": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000237": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000238": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000239": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000240": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000241": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000242": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000243": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000244": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000245": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000246": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000247": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000248": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000249": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000250": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000251": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000252": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000253": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000254": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000255": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000256": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000257": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000258": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000259": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000260": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000261": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000262": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000263": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000264": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000265": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000266": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000267": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000268": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000269": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000270": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000271": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000272": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000273": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000274": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000275": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000276": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000277": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000278": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000279": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000280": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000281": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000282": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000283": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000284": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000285": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000286": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000287": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000288": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000289": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000290": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000291": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000292": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000293": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000294": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000295": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000296": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000297": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000298": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000299": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000300": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000301": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000302": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000303": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000304": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000305": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000306": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000307": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000308": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000309": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000310": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000311": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000312": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000313": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000314": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000315": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000316": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000317": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000318": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000319": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000320": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000321": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000322": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000323": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000324": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000325": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000326": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000327": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000328": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000329": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000330": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000331": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000332": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000333": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000334": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000335": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000336": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000337": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000338": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000339": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000340": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000341": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000342": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000343": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000344": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000345": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000346": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000347": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000348": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000349": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000350": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000351": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000352": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000353": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000354": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000355": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000356": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000357": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000358": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000359": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000360": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000361": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000362": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000363": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000364": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000365": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000366": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000367": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000368": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000369": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000370": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000371": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000372": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000373": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000374": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000375": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000376": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000377": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000378": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000379": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000380": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000381": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000382": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000383": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000384": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000385": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000386": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000387": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000388": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000389": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000390": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000391": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000392": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000393": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000394": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000395": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000396": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000397": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000398": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000399": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000400": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000401": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000402": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000403": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000404": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000405": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000406": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000407": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000408": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000409": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000410": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000411": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000412": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000413": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000414": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000415": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000416": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000417": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000418": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000419": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000420": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000421": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000422": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000423": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000424": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000425": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000426": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000427": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000428": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000429": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000430": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000431": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000432": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000433": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000434": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000435": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000436": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000437": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000438": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000439": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000440": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000441": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000442": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000443": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000444": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000445": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000446": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000447": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000448": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000449": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000450": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000451": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000452": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000453": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000454": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000455": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000456": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000457": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000458": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000459": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000460": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000461": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000462": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000463": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000464": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000465": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000466": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000467": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000468": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000469": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000470": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000471": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000472": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000473": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000474": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000475": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000476": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000477": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000478": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000479": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000480": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000481": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000482": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000483": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000484": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000485": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000486": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000487": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000488": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000489": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000490": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000491": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000492": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000493": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000494": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000495": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000496": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000497": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000498": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000499": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000500": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000501": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000502": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000503": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000504": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000505": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000506": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000507": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000508": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000509": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000510": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000511": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000512": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000513": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000514": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000515": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000516": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000517": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000518": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000519": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000520": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000521": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000522": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000523": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000524": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000525": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000526": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000527": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000528": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000529": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000530": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000531": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000532": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000533": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000534": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000535": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000536": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000537": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000538": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000539": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000540": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000541": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000542": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000543": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000544": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000545": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000546": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000547": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000548": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000549": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000550": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000551": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000552": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000553": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000554": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000555": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000556": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000557": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000558": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000559": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000560": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000561": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000562": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000563": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000564": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000565": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000566": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000567": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000568": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000569": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000570": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000571": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000572": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000573": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000574": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000575": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000576": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000577": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000578": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000579": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000580": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000581": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000582": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000583": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000584": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000585": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000586": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000587": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000588": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000589": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000590": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000591": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000592": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000593": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000594": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000595": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000596": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000597": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000598": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000599": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000600": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000601": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000602": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000603": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000604": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000605": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000606": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000607": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000608": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000609": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000610": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000611": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000612": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000613": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000614": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000615": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000616": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000617": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000618": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000619": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000620": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000621": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000622": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000623": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000624": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000625": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000626": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000627": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000628": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000629": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000630": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000631": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000632": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000633": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000634": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000635": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000636": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000637": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000638": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000639": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000640": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000641": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000642": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000643": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000644": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000645": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000646": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000647": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000648": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000649": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000650": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000651": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000652": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000653": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000654": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000655": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000656": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000657": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000658": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000659": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000660": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000661": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000662": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000663": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000664": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000665": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000666": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000667": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000668": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000669": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000670": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000671": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000672": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000673": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000674": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000675": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000676": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000677": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000678": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000679": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000680": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000681": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000682": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000683": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000684": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000685": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000686": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000687": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000688": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000689": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000690": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000691": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000692": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000693": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000694": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000695": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000696": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000697": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000698": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000699": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000700": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000701": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000702": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000703": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000704": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000705": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000706": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000707": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000708": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000709": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000710": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000711": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000712": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000713": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000714": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000715": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000716": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000717": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000718": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000719": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000720": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000721": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000722": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000723": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000724": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000725": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000726": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000727": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000728": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000729": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000730": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000731": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000732": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000733": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000734": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000735": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000736": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000737": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000738": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000739": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000740": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000741": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000742": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000743": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000744": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000745": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000746": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000747": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000748": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000749": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000750": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000751": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000752": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000753": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000754": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000755": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000756": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000757": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000758": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000759": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000760": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000761": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000762": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000763": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000764": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000765": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000766": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000767": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000768": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000769": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000770": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000771": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000772": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000773": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000774": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000775": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000776": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000777": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000778": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000779": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000780": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000781": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000782": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000783": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000784": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000785": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000786": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000787": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000788": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000789": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000790": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000791": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000792": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000793": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000794": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000795": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000796": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000797": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000798": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000799": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000800": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000801": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000802": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000803": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000804": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000805": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000806": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000807": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000808": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000809": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000810": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000811": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000812": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000813": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000814": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000815": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000816": {
+      "name": "Mock molecular function"
+    },
+    "GO:0000817": {
+      "name": "Mock molecular function"
+    }
+  }
+}

@@ -32,7 +32,7 @@ function renderLogin() {
                                 <span class="material-symbols-outlined text-outline text-[18px]">lock</span>
                             </div>
                             <input class="w-full pl-10 pr-10 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-lg font-body text-body text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="password" placeholder="••••••••" type="password"/>
-                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-outline hover:text-on-surface transition-colors">
+                            <div onclick="togglePasswordVisibility('password', this)" class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-outline hover:text-on-surface transition-colors">
                                 <span class="material-symbols-outlined text-[18px]">visibility_off</span>
                             </div>
                         </div>

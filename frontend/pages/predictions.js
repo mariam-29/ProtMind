@@ -15,6 +15,16 @@ async function fetchAIPredictions() {
             body: JSON.stringify({ sequence: p.sequence, protein_id: p.id })
         });
         
+        if (response.status === 401) {
+            if (window.handleSessionExpired) {
+                window.handleSessionExpired();
+            } else {
+                localStorage.removeItem('protmind_token');
+                window.currentUser = null;
+                navigate('login');
+            }
+            throw new Error('Session expired. Please log in again.');
+        }
         if (!response.ok) throw new Error('Prediction failed');
         const data = await response.json();
         p.aiPredictions = data;
@@ -109,8 +119,60 @@ function renderPredictions() {
                 </div>
                 <p class="font-body text-body text-on-surface-variant mt-4">Predicted binding interface at residues 42-58.</p>
             </div>
+            <!-- RAG Explanation Card -->
+            <div class="col-span-12 bg-surface-container-lowest rounded-xl p-6 clinical-shadow border border-outline-variant/30 flex flex-col fade-in fade-in-delay-3">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-2xl">psychology</span>
+                        <h3 class="font-h3 text-h3 text-on-surface">AI-Agent Biological Interpretation</h3>
+                    </div>
+                    <span class="bg-primary/10 text-primary font-label text-xs px-2.5 py-1 rounded-full border border-primary/20">Retrieval-Augmented (RAG)</span>
+                </div>
+                <div class="prose dark:prose-invert max-w-none mb-6">
+                    <p class="font-body text-body text-on-surface leading-relaxed whitespace-pre-wrap">${ai.rag_explanation || 'No explanation generated.'}</p>
+                </div>
+                
+                <div class="border-t border-outline-variant/20 pt-4">
+                    <button onclick="toggleRAGTransparency()" class="text-primary hover:text-primary-fixed-dim font-label text-label flex items-center gap-1.5 transition-colors">
+                        <span class="material-symbols-outlined text-sm" id="transparency-icon">expand_more</span>
+                        <span id="transparency-text">Show RAG Pipeline Transparency</span>
+                    </button>
+                    
+                    <div id="rag-transparency-details" class="hidden mt-4 space-y-4">
+                        <!-- Retrieved Context -->
+                        <div>
+                            <h4 class="font-bold text-xs uppercase tracking-wider text-on-surface-variant mb-2">Retrieved Vector Database Context (Top Chunks)</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                ${ai.retrieved_chunks && ai.retrieved_chunks.length > 0 ? 
+                                    ai.retrieved_chunks.map((chunk, idx) => `
+                                        <div class="p-3 bg-surface rounded-lg border border-outline-variant/30 flex flex-col justify-between">
+                                            <div>
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="text-[10px] font-mono uppercase bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-300">${chunk.type}</span>
+                                                    <span class="text-[10px] font-mono text-teal-600 dark:text-teal-400 font-bold">${((chunk.similarity_score || 0) * 100).toFixed(1)}% Match</span>
+                                                </div>
+                                                <p class="text-xs text-on-surface-variant line-clamp-4 font-mono">${chunk.content}</p>
+                                            </div>
+                                            <div class="mt-2 pt-2 border-t border-outline-variant/10 text-[10px] font-mono text-slate-500">
+                                                ID: ${chunk.id}
+                                            </div>
+                                        </div>
+                                    `).join('') : '<p class="text-xs text-on-surface-variant">No reference chunks retrieved.</p>'
+                                }
+                            </div>
+                        </div>
+                        
+                        <!-- Augmented Prompt -->
+                        <div>
+                            <h4 class="font-bold text-xs uppercase tracking-wider text-on-surface-variant mb-2">Augmented LLM Prompt (Grounded Context)</h4>
+                            <pre class="p-4 bg-slate-50 dark:bg-slate-900 border border-outline-variant/30 rounded-lg text-[11px] font-mono text-slate-600 dark:text-slate-400 max-h-48 overflow-y-auto whitespace-pre-wrap select-all">${ai.augmented_prompt || 'No prompt generated.'}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Residue Attribution -->
-            <div class="col-span-12 bg-surface-container-lowest rounded-xl p-6 clinical-shadow border border-outline-variant/30 overflow-x-auto fade-in fade-in-delay-3">
+            <div class="col-span-12 bg-surface-container-lowest rounded-xl p-6 clinical-shadow border border-outline-variant/30 overflow-x-auto fade-in fade-in-delay-4">
                 <div class="flex justify-between items-center mb-6 min-w-[600px]">
                     <h3 class="font-h3 text-h3 text-on-surface">ESM-2 Residue Attribution Heatmap</h3>
                     <div class="flex items-center gap-2 font-label text-label text-on-surface-variant">
@@ -295,6 +357,16 @@ async function runMutagenesis() {
             })
         });
         
+        if (response.status === 401) {
+            if (window.handleSessionExpired) {
+                window.handleSessionExpired();
+            } else {
+                localStorage.removeItem('protmind_token');
+                window.currentUser = null;
+                navigate('login');
+            }
+            throw new Error('Session expired. Please log in again.');
+        }
         if (!response.ok) throw new Error('Mutagenesis failed');
         const result = await response.json();
         
@@ -364,3 +436,20 @@ ProtMind Precision Informatics
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 }
+
+window.toggleRAGTransparency = function() {
+    const details = document.getElementById('rag-transparency-details');
+    const icon = document.getElementById('transparency-icon');
+    const text = document.getElementById('transparency-text');
+    if (details && icon && text) {
+        if (details.classList.contains('hidden')) {
+            details.classList.remove('hidden');
+            icon.innerText = 'expand_less';
+            text.innerText = 'Hide RAG Pipeline Transparency';
+        } else {
+            details.classList.add('hidden');
+            icon.innerText = 'expand_more';
+            text.innerText = 'Show RAG Pipeline Transparency';
+        }
+    }
+};
