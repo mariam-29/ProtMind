@@ -7,6 +7,10 @@ backend/protmind.db
 backend/cache.db
 .DS_Store
 
+# Local environment variables
+.env
+.env.local
+
 # Data Ingestion raw data and processed embeddings
 data_ingestion/raw_data/
 data_ingestion/processed_chunks/
